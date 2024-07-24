@@ -1,0 +1,80 @@
+.SearchBook-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #007bff, #ff6600);
+    min-height: 100vh;
+}
+
+.SearchBook-title {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.SearchBook-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.SearchBook-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.SearchBook-button {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.SearchBook-button:hover {
+    background-color: #e65c00;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.SearchBook-result {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #8a2be2, #32cd32);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    color: #fff;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.SearchBook-result h3 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.SearchBook-result p {
+    margin: 5px 0;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
