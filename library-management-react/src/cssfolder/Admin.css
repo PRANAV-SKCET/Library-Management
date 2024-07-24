@@ -1,0 +1,102 @@
+.admin-body {
+    width: 100%;
+    height: 100vh;
+    margin:0px;
+    padding: 0px;
+    background: url("../images/admin-background.jpeg");
+    image-resolution: 100%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+.admin-container {
+    width: 350px;
+    margin: 0px auto;
+    padding: 30px;
+    border: 1px solid #070000;
+    border-radius: 12px;
+    background-color: rgba(11, 1, 1, 0.8); /* Slightly transparent background color */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: grid;
+    place-items: center;
+    transition: transform 0.3s ease-in-out;
+    background-size: cover; /* Ensures the image covers the entire container */
+}
+
+.admin-container:hover {
+    transform: scale(1.02);
+}
+
+.admin-container h1 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #f3f0f0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #f0e6e6;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color:black;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.login-button {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.login-button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.admin-error-message
+{
+    color: #fef9f9;
+}
