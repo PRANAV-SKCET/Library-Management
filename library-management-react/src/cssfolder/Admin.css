@@ -64,7 +64,7 @@ input {
     border-radius: 5px;
     box-sizing: border-box;
     font-size: 14px;
-    color: #ede3e3;
+    color:black;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
