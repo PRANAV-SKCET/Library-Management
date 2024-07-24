@@ -1,50 +1,69 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../cssfolder/SearchBooks.css';
 import MemberNavbar from './MemberNavbar';
 
 export default function SearchBooks() {
     const [bookName, setBookName] = useState('');
-    const [searchResult, setSearchResult] = useState(null);
+    const [books, setBooks] = useState([]);
+    const [filteredBooks, setFilteredBooks] = useState([]);
+    const [error, setError] = useState('');
+
+    useEffect(() => {
+        const fetchBooks = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/getAllBooks');
+                setBooks(response.data);
+                setFilteredBooks(response.data);
+            } catch (error) {
+                console.error('There was an error fetching the books:', error);
+                setError('There was an error fetching the books. Please try again.');
+            }
+        };
+
+        fetchBooks();
+    }, []);
 
     const handleSearch = (e) => {
         e.preventDefault();
-        // Simulated search result
-        const result = {
-            bookName: bookName,
-            author: "Author Name",
-            shelfNumber: "Shelf 5",
-            rackNumber: "Rack 3",
-            booksLeft: 7
-        };
-        setSearchResult(result);
-    }
+        const filtered = books.filter(book =>
+            book.bookName.toLowerCase().includes(bookName.toLowerCase())
+        );
+        setFilteredBooks(filtered);
+    };
 
     return (
         <div>
             <MemberNavbar />
             <div className="SearchBook-container">
-            <h2 className="SearchBook-title">Search Books</h2>
-            <form className="SearchBook-form" onSubmit={handleSearch}>
+                <h2 className="SearchBook-title">Search Books</h2>
+                <form className="SearchBook-form" onSubmit={handleSearch}>
                     <input
                         type="text"
                         className="SearchBook-input"
                         value={bookName}
                         onChange={(e) => setBookName(e.target.value)}
                         placeholder="Enter book name"
-                        />
-                        <button type="submit" className="SearchBook-button">Search</button>
-                        </form>
-                        {searchResult && (
-                            <div className="SearchBook-result">
-                            <h3>Search Result:</h3>
-                            <p><strong>Book Name:</strong> {searchResult.bookName}</p>
-                            <p><strong>Author:</strong> {searchResult.author}</p>
-                            <p><strong>Shelf Number:</strong> {searchResult.shelfNumber}</p>
-                            <p><strong>Rack Number:</strong> {searchResult.rackNumber}</p>
-                            <p><strong>Books Left:</strong> {searchResult.booksLeft}</p>
+                    />
+                    <button type="submit" className="SearchBook-button">Search</button>
+                </form>
+                {error && <p className="SearchBook-error">{error}</p>}
+                <div className="SearchBook-results">
+                    {filteredBooks.length > 0 ? (
+                        filteredBooks.map((book, index) => (
+                            <div key={index} className="SearchBook-result">
+                                <p><strong>Book Name:</strong> {book.bookName}</p>
+                                <p><strong>Author:</strong> {book.bookAuthor}</p>
+                                <p><strong>Shelf Number:</strong> {book.shelfNumber}</p>
+                                <p><strong>Rack Number:</strong> {book.rackNumber}</p>
+                                <p><strong>Books Left:</strong> {book.booksLeft}</p>
                             </div>
-                        )}
-                        </div>
-                    </div>
+                        ))
+                    ) : (
+                        <p>No books found.</p>
+                    )}
+                </div>
+            </div>
+        </div>
     );
 }
