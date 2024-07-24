@@ -43,7 +43,7 @@ export default function Admin() {
             <div className="admin-container">
                 <h1>Admin Login</h1>
                 <form className="admin-form" onSubmit={handleSubmit}>
-                    <div className="form-group">
+                    <div className="admin-form-group">
                         <label htmlFor="email">Email:</label>
                         <input 
                             type="email" 
@@ -54,7 +54,7 @@ export default function Admin() {
                             required 
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="admin-form-group">
                         <label htmlFor="password">Password:</label>
                         <input 
                             type="password" 
