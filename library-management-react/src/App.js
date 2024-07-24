@@ -7,6 +7,11 @@ import Admin from './components/Admin';
 import Member from './components/Member'
 import AdminHome from './components/AdminHome';
 import AdminNavbar from './components/AdminNavbar';
+import AddMembership from './components/AddMembership';
+import DeleteBooks from './components/DeleteBooks';
+import AddBooks from './components/AddBooks';
+import DelayedSubmissions from './components/DelayedSubmissions';
+import CheckOutBooks from './components/CheckOutBooks';
 
 function App() {
   const[isAdminLoggedIn,setIsAdminLoggedIn]=useState(false);
@@ -27,6 +32,11 @@ function App() {
               <Route path="/admin" element={<Admin/>} />
               <Route path="/member" element={<Member />} />
               <Route path="/adminHome" element={<AdminHome />} />
+              <Route path="/addMembership" element={<AddMembership />} />
+              <Route path="/addBooks" element={<AddBooks/>} />
+              <Route path="/deleteBooks" element={<DeleteBooks />} />
+              <Route path="/checkOutBooks" element={<CheckOutBooks />} />
+              <Route path="/delayedSubmissions" element={<DelayedSubmissions />} />
           </Routes>
         </Router>
       </div>
