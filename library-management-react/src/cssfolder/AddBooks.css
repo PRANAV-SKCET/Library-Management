@@ -1,0 +1,114 @@
+
+.AddBook-background {
+    background: url('../images/admin-background.jpeg');
+    background-size: cover;
+    padding: 50px 0;
+}
+
+.AddBook-container {
+    background-color: rgba(245, 247, 250, 0.9);
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.8) 30%, rgba(52, 152, 219, 0.8) 100%);
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.AddBook-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.AddBook-title {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.AddBook-form {
+    width: 100%;
+}
+
+.AddBook-field {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.AddBook-label {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.AddBook-input {
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.AddBook-input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    background-color: #f0f8ff;
+}
+
+.AddBook-input:hover {
+    border-color: #0056b3;
+}
+
+.AddBook-submit {
+    font-family: 'Roboto', sans-serif;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.AddBook-submit:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    .AddBook-container {
+        padding: 15px 20px;
+    }
+
+    .AddBook-title {
+        font-size: 20px;
+    }
+
+    .AddBook-input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .AddBook-submit {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+}

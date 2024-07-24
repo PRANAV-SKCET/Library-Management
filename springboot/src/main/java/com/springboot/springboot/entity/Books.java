@@ -12,16 +12,23 @@ public class Books {
     private int noOfBooks;
     private int booksLeft;
     private String date;
+    private int rackNo;
+    private int shelfNo;
     public Books() {
     }
-    public Books(String bookId, String bookName, String bookAuthor, int noOfBooks, int booksLeft, String date) {
+
+    public Books(String bookId, String bookName, String bookAuthor, int noOfBooks, int booksLeft, String date,
+            int rackNo, int shelfNo) {
         this.bookId = bookId;
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
         this.noOfBooks = noOfBooks;
         this.booksLeft = booksLeft;
         this.date = date;
+        this.rackNo = rackNo;
+        this.shelfNo = shelfNo;
     }
+
     public String getBookId() {
         return bookId;
     }
@@ -57,6 +64,22 @@ public class Books {
     }
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public int getRackNo() {
+        return rackNo;
+    }
+
+    public void setRackNo(int rackNo) {
+        this.rackNo = rackNo;
+    }
+
+    public int getShelfNo() {
+        return shelfNo;
+    }
+
+    public void setShelfNo(int shelfNo) {
+        this.shelfNo = shelfNo;
     }
 
     
