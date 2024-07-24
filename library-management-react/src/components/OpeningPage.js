@@ -7,7 +7,7 @@ export default function OpeningPage(){
             <h1>SKCET Library</h1>
             <div className='links'>
                 <Link to="/admin" className='link'>Admin</Link>
-                <Link to="/member" className='link'>Member</Link>
+                <Link to="/searchBooks" className='link'>Member</Link>
             </div>
         </div>
     );
