@@ -6,6 +6,9 @@
     background: url("../images/admin-background.jpeg");
     image-resolution: 100%;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
 .admin-container {
