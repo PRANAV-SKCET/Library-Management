@@ -59,12 +59,14 @@
     cursor: pointer;
     font-size: 18px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
     margin-left: 20px;
 }
 
 .AdminNavbar-logout:hover {
     background-color: #c0392b;
     transform: scale(1.05);
+    border-radius: 5px;
 }
 
 

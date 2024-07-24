@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../cssfolder/AddBooks.css';
 
 export default function AddBook() {
@@ -10,6 +11,7 @@ export default function AddBook() {
         rackNo: '',
         shelfNo: ''
     });
+    const [message, setMessage] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -19,16 +21,42 @@ export default function AddBook() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         
-        console.log('Form data:', formData);
+        const booksLeft = formData.noOfBooks;
+        const date = new Date().toISOString();
+
+        const dataToSend = {
+            ...formData,
+            booksLeft,
+            date
+        };
+
+        try {
+            await axios.post('http://localhost:8080/addBook', dataToSend);
+            setMessage('Book added successfully!');
+            setTimeout(() => {
+                setMessage('');
+            }, 1000);
+            setFormData({
+                bookId: '',
+                bookName: '',
+                bookAuthor: '',
+                noOfBooks: '',
+                rackNo: '',
+                shelfNo: ''
+            });
+        } catch (error) {
+            setMessage('There was an error adding the book. Please try again.');
+        }
     };
 
     return (
         <div className="AddBook-background">
             <div className="AddBook-container">
                 <h2 className="AddBook-title">Add New Book</h2>
+                {message && <p className="AddBook-message">{message}</p>}
                 <form className="AddBook-form" onSubmit={handleSubmit}>
                     <div className="AddBook-field">
                         <label htmlFor="bookId" className="AddBook-label">Book ID</label>

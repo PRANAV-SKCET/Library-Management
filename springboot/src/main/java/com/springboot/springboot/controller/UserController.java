@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.springboot.entity.AdminUsers;
+import com.springboot.springboot.entity.Books;
 import com.springboot.springboot.repository.AdminUsersRepo;
+import com.springboot.springboot.repository.BooksRepo;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -16,6 +18,9 @@ public class UserController {
 
     @Autowired
     private AdminUsersRepo adminUsersRepo;
+
+    @Autowired
+    private BooksRepo booksRepo;
 
     @PostMapping("/adminLogin")
     public Boolean adminLogin(@RequestBody AdminUsers adminUsers)
@@ -30,4 +35,9 @@ public class UserController {
         return false;
     }
 
+    @PostMapping("/addBook")
+    public void addBooks(@RequestBody Books books)
+    {
+        booksRepo.save(books);    
+    }
 }
