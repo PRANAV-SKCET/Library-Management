@@ -53,10 +53,10 @@ export default function SearchBooks() {
                         filteredBooks.map((book, index) => (
                             <div key={index} className="SearchBook-result">
                                 <p><strong>Book Name:</strong> {book.bookName}</p>
-                                <p><strong>Book ID:</strong> {book.rackNumber}</p>
+                                <p><strong>Book ID:</strong> {book.bookId}</p>
                                 <p><strong>Author:</strong> {book.bookAuthor}</p>
-                                <p><strong>Shelf Number:</strong> {book.shelfNumber}</p>
-                                <p><strong>Rack Number:</strong> {book.rackNumber}</p>
+                                <p><strong>Shelf Number:</strong> {book.shelfNo}</p>
+                                <p><strong>Rack Number:</strong> {book.rackNo}</p>
                                 <p><strong>Books Left:</strong> {book.booksLeft}</p>
                             </div>
                         ))

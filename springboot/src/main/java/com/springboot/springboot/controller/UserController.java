@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.springboot.entity.AdminUsers;
@@ -70,5 +71,16 @@ public class UserController {
     @GetMapping("/getPendingMembership")
     public List<MemberShip> getPendingMembership() {
         return memberShipRepo.getPendingMembership("Not Active");
+    }
+
+    @GetMapping("/getMembers")
+    public List<MemberShip> getMembers() {
+        return memberShipRepo.getMembers();
+    }
+
+    @PostMapping("/approveMembership")
+    public void approveMember(@RequestParam("mobileNumber") String mobileNumber)
+    {
+        memberShipRepo.approveMembership("Active",mobileNumber);
     }
 }

@@ -1,15 +1,12 @@
 import axios from 'axios';
-import { useEffect, useState, useContext } from 'react';
-import { AuthContext } from './context';
+import { useEffect, useState } from 'react';
 
-export default function AddMembership() {
+export default function Members() {
     const [applications, setApplications] = useState([]);
-    const {id, setId} = useContext(AuthContext);
-
 
     const fetchApplications = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/getPendingMembership');
+            const response = await axios.get('http://localhost:8080/getMembers');
             setApplications(response.data);
         } catch (error) {
             console.error('There was an error fetching the applications!', error);
@@ -20,25 +17,9 @@ export default function AddMembership() {
         fetchApplications();
     }, []);
 
-    const onApproveButton = async (mobileNumber) => {
-        try {
-            await axios.post(`http://localhost:8080/approveMembership`, null, {
-                params: {
-                    mobileNumber: mobileNumber,
-                    memberId:id
-                }
-            });
-    
-            fetchApplications();
-            setId(id+1);
-        } catch (error) {
-            console.error('There was an error approving the application!', error);
-        }
-    };
-
     return (
         <div>
-            <h2>Membership Applications for Approval</h2>
+            <h2>Our Library Members</h2>
             {applications.length > 0 ? (
                 <ul>
                     {applications.map((application, index) => (
@@ -50,12 +31,11 @@ export default function AddMembership() {
                             <p><strong>Address:</strong> {application.address}</p>
                             <p><strong>Gender:</strong> {application.gender}</p>
                             <p><strong>Status:</strong> {application.status}</p>
-                            <button onClick={() => onApproveButton(application.mobileNumber)}>Approve</button>
                         </li>
                     ))}
                 </ul>
             ) : (
-                <p>No pending applications.</p>
+                <p>No Members Present</p>
             )}
         </div>
     );

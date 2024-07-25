@@ -11,7 +11,7 @@ export default function AdminNavbar() {
 
     const handleClick=()=>{
         setIsAdminLoggedIn(false);
-        navigate("/admin");
+        navigate("/");
     }
     return (
         <div className="AdminNavbar-container">
@@ -23,6 +23,7 @@ export default function AdminNavbar() {
                 <Link to="/deleteBooks" className="AdminNavbar-link">Delete Books</Link>
                 <Link to="/checkOutBooks" className="AdminNavbar-link">Check-Out Books</Link>
                 <Link to="/delayedSubmissions" className="AdminNavbar-link">Delayed Submissions</Link>
+                <Link to="/members" className="AdminNavbar-link">Library Members</Link>
                 <button className="AdminNavbar-logout" onClick={handleClick}>Logout</button>
             </nav>
         </div>
