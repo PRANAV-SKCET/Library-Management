@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.springboot.entity.AdminUsers;
 import com.springboot.springboot.entity.Books;
+import com.springboot.springboot.entity.MemberShip;
 import com.springboot.springboot.repository.AdminUsersRepo;
 import com.springboot.springboot.repository.BooksRepo;
+import com.springboot.springboot.repository.MemberShipRepo;
+
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
@@ -24,6 +26,9 @@ public class UserController {
 
     @Autowired
     private BooksRepo booksRepo;
+
+    @Autowired
+    private MemberShipRepo memberShipRepo;
 
     @PostMapping("/adminLogin")
     public Boolean adminLogin(@RequestBody AdminUsers adminUsers)
@@ -48,5 +53,17 @@ public class UserController {
     public List<Books> getAllBooks() {
         return booksRepo.findAll();
     }
-    
+
+    @PostMapping("/newMember")
+    public String newMember(@RequestBody MemberShip memberShip) {
+        MemberShip memberShip2 = memberShipRepo.findById(memberShip.getMobileNumber()).orElse(null);
+        if(memberShip2 == null) 
+        {
+            memberShipRepo.save(memberShip);
+            return "Request Submitted";
+        }
+        else{
+            return "Mobile Number Already exists !!!";
+        }
+    }
 }

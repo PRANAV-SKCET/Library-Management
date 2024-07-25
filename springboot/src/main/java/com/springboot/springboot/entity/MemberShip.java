@@ -10,7 +10,7 @@ public class MemberShip {
     private String name;
     private String memberId;
     private String membershipDate;
-    private String dateofBirth;
+    private String dateOfBirth;
     private String address;
     private String gender;
     private String email;
@@ -19,13 +19,13 @@ public class MemberShip {
     public MemberShip() {
     }
 
-    public MemberShip(String mobileNumber, String name, String memberId, String membershipDate, String dateofBirth,
+    public MemberShip(String mobileNumber, String name, String memberId, String membershipDate, String dateOfBirth,
             String address, String gender, String email, String status) {
         this.mobileNumber = mobileNumber;
         this.name = name;
         this.memberId = memberId;
         this.membershipDate = membershipDate;
-        this.dateofBirth = dateofBirth;
+        this.dateOfBirth = dateOfBirth;
         this.address = address;
         this.gender = gender;
         this.email = email;
@@ -64,12 +64,12 @@ public class MemberShip {
         this.membershipDate = membershipDate;
     }
 
-    public String getDateofBirth() {
-        return dateofBirth;
+    public String getdateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setDateofBirth(String dateofBirth) {
-        this.dateofBirth = dateofBirth;
+    public void setdateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getAddress() {
