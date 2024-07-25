@@ -7,7 +7,7 @@ export default function MemberNavbar() {
         <div className="MemberNavbar-container">
             <nav className="MemberNavbar-nav">
                 <div className="MemberNavbar-left">
-                    <Link to="/searchBooks" className="MemberNavbar-link">
+                    <Link to="/" className="MemberNavbar-link">
                         <span className="MemberNavbar-icon">🏠</span> {/* Unicode home icon */}
                         Home Page
                     </Link>
