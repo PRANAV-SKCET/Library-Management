@@ -79,8 +79,8 @@ public class UserController {
     }
 
     @PostMapping("/approveMembership")
-    public void approveMember(@RequestParam("mobileNumber") String mobileNumber)
+    public void approveMember(@RequestParam("mobileNumber") String mobileNumber,@RequestParam("memberId") String memberId)
     {
-        memberShipRepo.approveMembership("Active",mobileNumber);
+        memberShipRepo.approveMembership("Active",mobileNumber,memberId);
     }
 }

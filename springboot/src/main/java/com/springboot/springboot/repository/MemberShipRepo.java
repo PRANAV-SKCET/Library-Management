@@ -24,6 +24,6 @@ public interface MemberShipRepo extends JpaRepository<MemberShip,String>{
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE member_ship SET status=?1 where mobile_number=?2", nativeQuery = true)
-    public void approveMembership(String status,String mobileNumber);
+    @Query(value = "UPDATE member_ship SET status=?1,member_id=?3 where mobile_number=?2", nativeQuery = true)
+    public void approveMembership(String status,String mobileNumber,String memberId);
 }

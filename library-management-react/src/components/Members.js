@@ -25,8 +25,9 @@ export default function Members() {
                     {applications.map((application, index) => (
                         <li key={index}>
                             <p><strong>Name:</strong> {application.name}</p>
-                            <p><strong>Email:</strong> {application.email}</p>
                             <p><strong>Mobile Number:</strong> {application.mobileNumber}</p>
+                            <p><strong>Member Id:</strong> {application.memberId}</p>
+                            <p><strong>Email:</strong> {application.email}</p>
                             <p><strong>Date of Birth:</strong> {application.dateOfBirth}</p>
                             <p><strong>Address:</strong> {application.address}</p>
                             <p><strong>Gender:</strong> {application.gender}</p>
