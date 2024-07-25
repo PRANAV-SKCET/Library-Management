@@ -34,7 +34,7 @@ export default function Admin() {
             }
 
         } catch (error) {
-            setError('Invalid email or password');
+            setError('Failed to Login!');
         }
     };
 
