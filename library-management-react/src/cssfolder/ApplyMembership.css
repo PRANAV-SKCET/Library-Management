@@ -3,54 +3,69 @@
     height: 100vh;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #FFA500, #1E90FF); /* Orange to Blue gradient */
+    background: linear-gradient(to right, #FFA500, #1E90FF);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    animation: backgroundAnimation 5s infinite alternate;
 }
 
-.ApplyMembership-container {
-    width: 400px;
-    padding: 30px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent White */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(to right, #FFA500, #1E90FF);
+    }
+    100% {
+        background: linear-gradient(to right, #1E90FF, #FFA500);
+    }
+}
+
+.ApplyMembership-header {
     text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.ApplyMembership-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-}
-
-.ApplyMembership-title {
-    margin-bottom: 25px;
-    font-size: 28px;
-    color: #1E90FF; /* Blue Color */
+    color: #fff;
+    font-size: 36px;
     font-weight: 700;
-    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     animation: fadeInDown 0.8s ease-in-out;
 }
 
 .ApplyMembership-form {
+    width: 60%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: fadeInUp 0.8s ease-in-out;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    animation: fadeInUp 0.8s ease-in-out, boxShadowAnimation 3s infinite alternate;
+}
+
+@keyframes boxShadowAnimation {
+    0% {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 8px 50px rgba(0, 0, 0, 0.5);
+    }
 }
 
 .ApplyMembership-form-group {
+    width: 48%;
     margin-bottom: 20px;
+}
+
+.ApplyMembership-form-group-full {
     width: 100%;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #FF6347; /* Tomato Orange */
+    color: #FF6347;
     font-size: 16px;
 }
 
@@ -68,14 +83,14 @@ select {
 
 input:focus,
 select:focus {
-    border-color: #1E90FF; /* Blue */
+    border-color: #1E90FF;
     box-shadow: 0 0 8px rgba(30, 144, 255, 0.2);
     outline: none;
 }
 
 .ApplyMembership-submit-button {
     padding: 12px 25px;
-    background: linear-gradient(135deg, #FFA500, #1E90FF); /* Orange to Blue Gradient */
+    background: linear-gradient(135deg, #FFA500, #1E90FF);
     color: white;
     border: none;
     border-radius: 5px;
@@ -83,11 +98,11 @@ select:focus {
     transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
     font-size: 16px;
     text-transform: uppercase;
-    margin-top: 20px;
+    width: 100%;
 }
 
 .ApplyMembership-submit-button:hover {
-    background: linear-gradient(135deg, #1E90FF, #FFA500); /* Inverted Gradient on Hover */
+    background: linear-gradient(135deg, #1E90FF, #FFA500);
     box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
     transform: translateY(-3px);
 }
