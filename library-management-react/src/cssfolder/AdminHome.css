@@ -1,0 +1,22 @@
+/* src/App.css */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: black;
+  }
+  .box{
+    height: 16em;
+    width: 40%;
+  }
+  
