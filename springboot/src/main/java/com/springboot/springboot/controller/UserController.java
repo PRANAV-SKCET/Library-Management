@@ -66,4 +66,9 @@ public class UserController {
             return "Mobile Number Already exists !!!";
         }
     }
+
+    @GetMapping("/getPendingMembership")
+    public List<MemberShip> getPendingMembership() {
+        return memberShipRepo.getPendingMembership("Not Active");
+    }
 }
