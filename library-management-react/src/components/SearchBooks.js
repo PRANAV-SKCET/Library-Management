@@ -43,7 +43,7 @@ export default function SearchBooks() {
                         className="SearchBook-input"
                         value={bookName}
                         onChange={(e) => setBookName(e.target.value)}
-                        placeholder="Enter book name"
+                        placeholder="Enter Book Name"
                     />
                     <button type="submit" className="SearchBook-button">Search</button>
                 </form>
@@ -53,6 +53,7 @@ export default function SearchBooks() {
                         filteredBooks.map((book, index) => (
                             <div key={index} className="SearchBook-result">
                                 <p><strong>Book Name:</strong> {book.bookName}</p>
+                                <p><strong>Book ID:</strong> {book.rackNumber}</p>
                                 <p><strong>Author:</strong> {book.bookAuthor}</p>
                                 <p><strong>Shelf Number:</strong> {book.shelfNumber}</p>
                                 <p><strong>Rack Number:</strong> {book.rackNumber}</p>
