@@ -14,10 +14,13 @@ public class MemberShip {
     private String address;
     private String gender;
     private String email;
+    private String status;
+
     public MemberShip() {
     }
+
     public MemberShip(String mobileNumber, String name, String memberId, String membershipDate, String dateofBirth,
-            String address, String gender, String email) {
+            String address, String gender, String email, String status) {
         this.mobileNumber = mobileNumber;
         this.name = name;
         this.memberId = memberId;
@@ -26,56 +29,79 @@ public class MemberShip {
         this.address = address;
         this.gender = gender;
         this.email = email;
+        this.status = status;
     }
+
     public String getMobileNumber() {
         return mobileNumber;
     }
+
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getMemberId() {
         return memberId;
     }
+
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+
     public String getMembershipDate() {
         return membershipDate;
     }
+
     public void setMembershipDate(String membershipDate) {
         this.membershipDate = membershipDate;
     }
+
     public String getDateofBirth() {
         return dateofBirth;
     }
+
     public void setDateofBirth(String dateofBirth) {
         this.dateofBirth = dateofBirth;
     }
+
     public String getAddress() {
         return address;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }
+
     public String getGender() {
         return gender;
     }
+
     public void setGender(String gender) {
         this.gender = gender;
     }
+
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
 
-    
-    
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
 }
