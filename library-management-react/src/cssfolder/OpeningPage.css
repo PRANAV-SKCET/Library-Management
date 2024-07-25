@@ -6,7 +6,8 @@ body {
 .OpeningPage-container {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to right, #FFA500, #1E90FF); /* Orange to Blue gradient */
+    background-image: url("https://wallpaperaccess.com/full/253364.jpg");
+    /* background: linear-gradient(to right, #FFA500, #1E90FF); Orange to Blue gradient */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -34,7 +35,7 @@ body {
     text-decoration: none;
     width: 200px;
     height: 50px;
-    background: linear-gradient(135deg, #FFA500, #1E90FF); /* Orange to Blue gradient */
+    background: linear-gradient(135deg, #95825f, #b2b6a9); /* Orange to Blue gradient */
     text-align: center;
     display: flex;
     align-items: center;
@@ -49,7 +50,7 @@ body {
 }
 
 .OpeningPage-link:hover {
-    background: linear-gradient(135deg, #1E90FF, #FFA500); /* Inverted gradient on hover */
+    background: linear-gradient(135deg, #c9c9c9, #c7c5c2); /* Inverted gradient on hover */
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
