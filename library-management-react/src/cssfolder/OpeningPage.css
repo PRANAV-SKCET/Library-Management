@@ -1,25 +1,40 @@
-.opening {
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.OpeningPage-container {
     width: 100%;
     height: 100vh;
-    background-color: rgb(0, 0, 0);
+    background: linear-gradient(to right, #FFA500, #1E90FF); /* Orange to Blue gradient */
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.links {
+.OpeningPage-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 48px;
+    color: #fff;
+}
+
+.OpeningPage-links {
     display: flex;
     gap: 20px;
     margin-top: 20px;
 }
 
-.link {
+.OpeningPage-link {
     text-decoration: none;
     width: 200px;
-    height: 200px;
-    background-color: wheat;
-    margin: auto;
+    height: 50px;
+    background: linear-gradient(135deg, #FFA500, #1E90FF); /* Orange to Blue gradient */
     text-align: center;
     display: flex;
     align-items: center;
@@ -30,15 +45,39 @@
     color: black;
     font-size: 25px;
     font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.link:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+.OpeningPage-link:hover {
+    background: linear-gradient(135deg, #1E90FF, #FFA500); /* Inverted gradient on hover */
     transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
+.OpeningPage-footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
     text-align: center;
-    margin-bottom: 20px;
-    color: white;
+    color: #fff;
+    font-size: 14px;
+}
+
+.OpeningPage-footer p {
+    margin: 0;
+}
+
+.OpeningPage-social-links {
+    margin-top: 10px;
+}
+
+.OpeningPage-social-link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.OpeningPage-social-link:hover {
+    color: #ddd;
 }
