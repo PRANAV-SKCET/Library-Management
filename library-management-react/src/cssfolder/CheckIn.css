@@ -3,7 +3,8 @@
     height: 100vh;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #1E90FF, #FF4500); /* Dodger Blue to Orange Red gradient */
+    background-image: url("https://external-preview.redd.it/65-49YokjZ78vRf-3KTyWIylwHlGX9ycbOdze3BRWSY.png?auto=webp&s=441b91c85deb2161d6de2ec350d362aa8e62cb65");
+    /* background: linear-gradient(135deg, #1E90FF, #FF4500); Dodger Blue to Orange Red gradient */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +15,7 @@
     width: 500px;
     padding: 40px;
     border-radius: 20px;
-    background: linear-gradient(135deg, #6a0dad, #00c853); /* Violet to Green gradient */
+    background: linear-gradient(135deg, #aca989, #c4bf99); /* Violet to Green gradient */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
     position: relative;
@@ -23,7 +24,7 @@
 .CheckIn-title {
     margin-bottom: 20px;
     font-size: 32px;
-    color: #fff; /* White */
+    color: #eae3e3; /* White */
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -43,7 +44,7 @@
     display: block;
     margin-bottom: 6px;
     font-weight: 600;
-    color: #fff; /* White */
+    color: #755d5d; /* White */
     font-size: 14px;
 }
 
@@ -66,7 +67,7 @@
 
 .CheckIn-submit-button {
     padding: 12px 30px;
-    background: #FF4500; /* Orange Red */
+    background: #6a270d; /* Orange Red */
     color: white;
     border: none;
     border-radius: 8px;
@@ -78,7 +79,7 @@
 }
 
 .CheckIn-submit-button:hover {
-    background: #FF6347; /* Tomato */
+    background: #859c6a; /* Tomato */
     box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);
     transform: translateY(-3px);
 }

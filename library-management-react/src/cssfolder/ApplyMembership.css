@@ -3,7 +3,8 @@
     height: 100vh;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #FFA500, #1E90FF);
+    background-image: url("http://wallpapercave.com/wp/IlpLRYK.jpg");
+    /* background: linear-gradient(to right, #FFA500, #1E90FF); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,18 +12,18 @@
     animation: backgroundAnimation 5s infinite alternate;
 }
 
-@keyframes backgroundAnimation {
+/* @keyframes backgroundAnimation {
     0% {
         background: linear-gradient(to right, #FFA500, #1E90FF);
     }
     100% {
         background: linear-gradient(to right, #1E90FF, #FFA500);
     }
-}
+} */
 
 .ApplyMembership-header {
     text-align: center;
-    color: #fff;
+    color: #f4f0f0;
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 40px;
@@ -32,7 +33,7 @@
 
 .ApplyMembership-form {
     width: 60%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(206, 153, 113, 0.95);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
@@ -65,7 +66,7 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #FF6347;
+    color: #242218;
     font-size: 16px;
 }
 
@@ -90,7 +91,7 @@ select:focus {
 
 .ApplyMembership-submit-button {
     padding: 12px 25px;
-    background: linear-gradient(135deg, #FFA500, #1E90FF);
+    background: linear-gradient(135deg, #342e24, #7a8189);
     color: white;
     border: none;
     border-radius: 5px;
@@ -102,7 +103,7 @@ select:focus {
 }
 
 .ApplyMembership-submit-button:hover {
-    background: linear-gradient(135deg, #1E90FF, #FFA500);
+    background: linear-gradient(135deg, #c7ccd0, #8b8780);
     box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
     transform: translateY(-3px);
 }
