@@ -1,7 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../cssfolder/SearchBooks.css';
+import '../cssfolder/ProductCard.css'; // Ensure this file exists and has the necessary styles
+import '../cssfolder/SearchBooks.css'; // Ensure this file exists and has the necessary styles
 import MemberNavbar from './MemberNavbar';
+
+const ProductCard = ({ book }) => {
+    return (
+        <div className="productcard">
+            <div className="card-info">
+
+                <h2 className="card-name">{book.bookName}</h2>
+                <p className="card-description"><strong>Author:</strong> {book.bookAuthor}</p>
+                <p className="card-description"><strong>Shelf Number:</strong> {book.shelfNo}</p>
+                <p className="card-description"><strong>Rack Number:</strong> {book.rackNo}</p>
+                <p className="card-description"><strong>Books Left:</strong> {book.booksLeft}</p>
+            </div>
+        </div>
+    );
+};
 
 export default function SearchBooks() {
     const [bookName, setBookName] = useState('');
@@ -51,14 +67,7 @@ export default function SearchBooks() {
                 <div className="SearchBook-results">
                     {filteredBooks.length > 0 ? (
                         filteredBooks.map((book, index) => (
-                            <div key={index} className="SearchBook-result">
-                                <p><strong>Book Name:</strong> {book.bookName}</p>
-                                <p><strong>Book ID:</strong> {book.bookId}</p>
-                                <p><strong>Author:</strong> {book.bookAuthor}</p>
-                                <p><strong>Shelf Number:</strong> {book.shelfNo}</p>
-                                <p><strong>Rack Number:</strong> {book.rackNo}</p>
-                                <p><strong>Books Left:</strong> {book.booksLeft}</p>
-                            </div>
+                            <ProductCard key={index} book={book} />
                         ))
                     ) : (
                         <p>No books found.</p>
