@@ -5,7 +5,7 @@
     padding: 20px;
     background-image: url("https://i1.wp.com/onekindesign.com/wp-content/uploads/2016/07/Home-Office-Library-Ideas-09-1-Kindesign.jpg?resize=1500%2C997&ssl=1");
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -63,18 +63,15 @@
     background: linear-gradient(to bottom right, rgb(124, 49, 49), #a49b56);
     border-radius: 10%;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    width: 110%; /* Increase width to cover the full width of the page */
-    height: 100%; /* Adjust height to maintain proportion */
-    max-width: 1600px; /* Increase max-width for larger screens */
-    color: #fff;
+    width: 100%; /* Increase width to cover the full width of the page */
+    
+    color: #940b0b;
     animation: fadeIn 0.5s ease-in-out;
     overflow-y: auto; /* Add vertical scroll if content overflows */
+    display: flex;
 }
 
-.SearchBook-result h3 {
-    margin-bottom: 10px;
-    color: #fff;
-}
+
 
 .SearchBook-result p {
     margin: 10px 0; /* Increase margin for better spacing */
@@ -82,3 +79,4 @@
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
 }
+
