@@ -1,0 +1,16 @@
+.delete-container
+{
+    width: 100%;
+    height:100vh;
+    background-color: rgb(226, 174, 121);
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.delete-container h1{
+    padding: 0px;
+    margin: 0px;
+}

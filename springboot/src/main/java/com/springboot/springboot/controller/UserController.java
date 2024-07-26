@@ -83,4 +83,38 @@ public class UserController {
     {
         memberShipRepo.approveMembership("Active",mobileNumber,memberId);
     }
+
+    @PostMapping("/deleteBook")
+    public String deleteBook(@RequestParam("bookId") String bookId, @RequestParam("noOfBooks") int noOfBooks)
+    {
+        Books books = booksRepo.findById(bookId).orElse(null);
+        if(books==null)
+        {
+            return "Book not found";
+        }
+        if(books.getNoOfBooks()<noOfBooks)
+        {
+            return "Available book is less than you have entered !!!";
+        }
+        if(books.getNoOfBooks()==noOfBooks)
+        {
+            booksRepo.deleteById(bookId);
+        }
+        else
+        {
+            int t = books.getNoOfBooks();
+            t=t-noOfBooks;
+            books.setNoOfBooks(t);
+
+            int h = books.getBooksLeft();
+            h=h-noOfBooks;
+            books.setBooksLeft(h);
+            if(h<0)
+            {
+                return "Check-In the lost book";
+            }
+            booksRepo.save(books);
+        }
+        return "Book Removed";
+    }
 }
