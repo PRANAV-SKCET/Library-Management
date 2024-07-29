@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.springboot.springboot.entity.CheckOut;
 
-public interface CheckOutRepo extends JpaRepository<CheckOut,String>{
+public interface CheckOutRepo extends JpaRepository<CheckOut,Long>{
     
 }
