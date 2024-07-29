@@ -2,39 +2,111 @@
     width: 100%;
     height: 100vh;
     background-image: url("https://cdn.wallpapersafari.com/27/59/JD4mOA.jpg");
-    background-size: cover; /* Ensures the image covers the entire container */
-    background-position: center; /* Centers the image */
+    background-size: cover;
+    background-position: center;
     margin: 0;
-    padding: 20px; /* Added padding for better spacing */
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #e8e8e8; /* Light color for general text */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds shadow for better readability */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow around the container */
+    color: #e8e8e8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .delete-container h1 {
-    padding: 10px 0; /* Added padding for spacing */
-    margin: 10px 0; /* Added margin for spacing */
-    font-size: 3em; /* Increased font size for headers */
-    color: #f0e6e6; /* Slightly lighter color for headers */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Stronger shadow for emphasis */
+    padding: 10px 0;
+    margin: 10px 0;
+    font-size: 3em;
+    color: #f0e6e6;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    animation: fadeInDown 1s ease;
 }
 
 .delete-container p {
-    padding: 5px 0; /* Added padding for spacing */
-    margin: 5px 0; /* Added margin for spacing */
-    font-size: 1.5em; /* Increased font size for paragraphs */
-    color: #fafafa; /* Light color for paragraphs */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Subtle shadow for readability */
-    line-height: 1.5; /* Improved line height for readability */
+    padding: 5px 0;
+    margin: 5px 0;
+    font-size: 1.5em;
+    color: #fafafa;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    line-height: 1.5;
+    animation: fadeIn 1s ease;
 }
 
-/* Specific styles for Book ID and Number of Books */
 .delete-container .book-info {
-    color: #fff; /* Light color to contrast the background */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds shadow for better readability */
-    font-weight: bold; /* Bold text for emphasis */
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    animation: fadeIn 1s ease;
+}
+
+.delete-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease;
+}
+
+.delete-container label {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #e8e8e8;
+}
+
+.delete-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.delete-container input:focus {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+.delete-container button {
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #e63946;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.delete-container button:hover {
+    background-color: #d62839;
+    transform: scale(1.1);
+}
+
+/* Animation effects */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
