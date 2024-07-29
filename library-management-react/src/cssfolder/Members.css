@@ -1,0 +1,44 @@
+.Members {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the box horizontally */
+    padding: 20px;
+    background-color: #9f2727;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Centers the text */
+}
+
+.Members h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Members ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Members li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Aligns text inside list items */
+}
+
+.Members p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 16px;
+}
+
+.Members p strong {
+    color: #333;
+}
