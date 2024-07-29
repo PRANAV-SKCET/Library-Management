@@ -1,71 +1,54 @@
-import React, { useState } from 'react';
+import {useState } from "react";
+import MemberNavbar from "./MemberNavbar";
 import axios from 'axios';
-import '../cssfolder/CheckIn.css';
-import MemberNavbar from './MemberNavbar';
+import {useNavigate } from "react-router-dom";
 
-export default function CheckIn() {
-    const [formData, setFormData] = useState({
-        bookId: '',
-        bookTitle: '',
-        memberId: '',
-        memberName: '',
-        checkOutDate: '',
-        dueDate: ''
-    });
+export default function CheckIn(){
+    const [mobileNumber,setMobileNumber]=useState('');
+    const [bookId,setBookId]=useState('');
+    const [message,setMessage]=useState('');
+    const navigate = useNavigate();
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:8080/checkIn', formData);
-            console.log(response.data);
-            // Handle successful response
-        } catch (error) {
-            console.error('Error:', error);
+    const handleCheckIn=async()=>
+    {
+        const response=await axios.post('http://localhost:8080/checkIn',null,
+            {
+                params:{
+                    mobileNumber:mobileNumber,
+                    bookId:bookId
+                }
+            }
+        );
+
+        setMessage(response.data);
+        if(response.data==="Check In Success")
+        {
+            setTimeout(()=>{
+                navigate("/");
+            },500)
         }
-    };
+    }
 
-    return (
+    return(
         <div>
-            <MemberNavbar />
-            <div className="CheckIn-body">
-                <div className="CheckIn-container">
-                    <h1 className="CheckIn-title">Check-in Book</h1>
-                    <form className="CheckIn-form" onSubmit={handleSubmit}>
-                        <div className="CheckIn-form-group">
-                            <label>Book ID/ISBN</label>
-                            <input type="text" name="bookId" value={formData.bookId} onChange={handleChange} required />
-                        </div>
-                        <div className="CheckIn-form-group">
-                            <label>Book Title</label>
-                            <input type="text" name="bookTitle" value={formData.bookTitle} onChange={handleChange} required />
-                        </div>
-                        <div className="CheckIn-form-group">
-                            <label>Member ID</label>
-                            <input type="text" name="memberId" value={formData.memberId} onChange={handleChange} required />
-                        </div>
-                        <div className="CheckIn-form-group">
-                            <label>Member Name</label>
-                            <input type="text" name="memberName" value={formData.memberName} onChange={handleChange} required />
-                        </div>
-                        <div className="CheckIn-form-group">
-                            <label>Check-out Date</label>
-                            <input type="date" name="checkOutDate" value={formData.checkOutDate} onChange={handleChange} required />
-                        </div>
-                        <div className="CheckIn-form-group">
-                            <label>Due Date</label>
-                            <input type="date" name="dueDate" value={formData.dueDate} onChange={handleChange} required />
-                        </div>
-                        <button type="submit" className="CheckIn-submit-button">Submit</button>
-                    </form>
-                </div>
-            </div>
+            <MemberNavbar/>
+            <h2>CheckIn</h2>
+            <label>Mobile Number</label>
+            <input type="text" 
+            placeholder="Enter your Mobile Number" 
+            value={mobileNumber} 
+            onChange={(e)=>setMobileNumber(e.target.value)}
+            />
+
+            <label>Book Id</label>
+            <input type="text"
+            placeholder="Enter Boook Id"
+            value={bookId}
+            onChange={(e)=>setBookId(e.target.value)}
+            />
+            <button onClick={handleCheckIn}>Check In</button>
+            {message}
         </div>
     );
 }

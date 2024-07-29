@@ -7,7 +7,7 @@ import { AuthContext } from "./context";
 export default function CheckOut(){
     const [mobileNumber,setMobileNumber]=useState('');
     const [message,setMessage]=useState('');
-    const {setMemberMobileNumber,memberMobileNumber}=useContext(AuthContext);
+    const {setMemberMobileNumber}=useContext(AuthContext);
     const navigate = useNavigate();
     const handleVerify=async()=>
     {

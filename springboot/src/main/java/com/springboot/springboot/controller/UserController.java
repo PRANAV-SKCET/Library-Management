@@ -1,4 +1,5 @@
 package com.springboot.springboot.controller;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,6 @@ import com.springboot.springboot.repository.MemberShipRepo;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
-
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
@@ -37,22 +37,19 @@ public class UserController {
     private CheckOutRepo checkOutRepo;
 
     @PostMapping("/adminLogin")
-    public Boolean adminLogin(@RequestBody AdminUsers adminUsers)
-    {
+    public Boolean adminLogin(@RequestBody AdminUsers adminUsers) {
         String email = adminUsers.getEmail();
         String password = adminUsers.getPassword();
-        List<AdminUsers>li = adminUsersRepo.adminLogin(email, password);
-        if(li.size()>0)
-        {
+        List<AdminUsers> li = adminUsersRepo.adminLogin(email, password);
+        if (li.size() > 0) {
             return true;
         }
         return false;
     }
 
     @PostMapping("/addBook")
-    public void addBooks(@RequestBody Books books)
-    {
-        booksRepo.save(books);    
+    public void addBooks(@RequestBody Books books) {
+        booksRepo.save(books);
     }
 
     @GetMapping("/getAllBooks")
@@ -63,12 +60,10 @@ public class UserController {
     @PostMapping("/newMember")
     public String newMember(@RequestBody MemberShip memberShip) {
         MemberShip memberShip2 = memberShipRepo.findById(memberShip.getMobileNumber()).orElse(null);
-        if(memberShip2 == null) 
-        {
+        if (memberShip2 == null) {
             memberShipRepo.save(memberShip);
             return "Request Submitted";
-        }
-        else{
+        } else {
             return "Mobile Number Already exists !!!";
         }
     }
@@ -84,38 +79,31 @@ public class UserController {
     }
 
     @PostMapping("/approveMembership")
-    public void approveMember(@RequestParam("mobileNumber") String mobileNumber,@RequestParam("memberId") String memberId)
-    {
-        memberShipRepo.approveMembership("Active",mobileNumber,memberId);
+    public void approveMember(@RequestParam("mobileNumber") String mobileNumber,
+            @RequestParam("memberId") String memberId) {
+        memberShipRepo.approveMembership("Active", mobileNumber, memberId);
     }
 
     @PostMapping("/deleteBook")
-    public String deleteBook(@RequestParam("bookId") String bookId, @RequestParam("noOfBooks") int noOfBooks)
-    {
+    public String deleteBook(@RequestParam("bookId") String bookId, @RequestParam("noOfBooks") int noOfBooks) {
         Books books = booksRepo.findById(bookId).orElse(null);
-        if(books==null)
-        {
+        if (books == null) {
             return "Book not found";
         }
-        if(books.getNoOfBooks()<noOfBooks)
-        {
+        if (books.getNoOfBooks() < noOfBooks) {
             return "Available book is less than you have entered !!!";
         }
-        if(books.getNoOfBooks()==noOfBooks)
-        {
+        if (books.getNoOfBooks() == noOfBooks) {
             booksRepo.deleteById(bookId);
-        }
-        else
-        {
+        } else {
             int t = books.getNoOfBooks();
-            t=t-noOfBooks;
+            t = t - noOfBooks;
             books.setNoOfBooks(t);
 
             int h = books.getBooksLeft();
-            h=h-noOfBooks;
+            h = h - noOfBooks;
             books.setBooksLeft(h);
-            if(h<0)
-            {
+            if (h < 0) {
                 return "Check-In the lost book";
             }
             booksRepo.save(books);
@@ -124,42 +112,50 @@ public class UserController {
     }
 
     @PostMapping("/verifyMember")
-    public String verifyMember(@RequestParam("mobileNumber") String mobileNumber)
-    {
+    public String verifyMember(@RequestParam("mobileNumber") String mobileNumber) {
         MemberShip memberShip = memberShipRepo.findById(mobileNumber).orElse(null);
-        if(memberShip==null)
-        {
+        if (memberShip == null) {
             return "Member not found";
         }
-        if(memberShip.getStatus().equals("Not Active"))
-        {
+        if (memberShip.getStatus().equals("Not Active")) {
             return "Member is not active";
         }
         return "Member Verified";
     }
 
     @GetMapping("/getMemberDetails")
-    public MemberShip getMemberDetails(@RequestParam String mobileNumber)
-    {
+    public MemberShip getMemberDetails(@RequestParam String mobileNumber) {
         return memberShipRepo.findById(mobileNumber).orElse(null);
     }
 
     @GetMapping("/getBookDetails")
-    public Books getBookDetails(@RequestParam String bookId)
-    {
+    public Books getBookDetails(@RequestParam String bookId) {
         return booksRepo.findById(bookId).orElse(null);
     }
 
     @PostMapping("/checkout")
-    public String checkout(@RequestBody CheckOut checkOut)
-    {
+    public String checkout(@RequestBody CheckOut checkOut) {
         String bookId = checkOut.getBookId();
         Books books = booksRepo.findById(bookId).orElse(null);
         int f = books.getBooksLeft();
-        f=f-1;
+        f = f - 1;
         books.setBooksLeft(f);
         booksRepo.save(books);
         checkOutRepo.save(checkOut);
         return "Check-Out Successful";
+    }
+
+    @PostMapping("/checkIn")
+    public String checkIn(@RequestParam String mobileNumber, @RequestParam String bookId) {
+        MemberShip memberShip = memberShipRepo.findById(mobileNumber).orElse(null);
+        String memberId = memberShip.getMemberId();
+        List<CheckOut> li = checkOutRepo.findByMobileNumberAndBookId(bookId, memberId);
+        if (li.size() == 0) {
+            return "Match doesn't exist !!! .  Please verify the Mobile Number and Book Id";
+        }
+        CheckOut checkOut = li.get(0);
+        long id = checkOut.getId();
+        checkOutRepo.deleteById(id);
+        return "Check In Success";
     }
 }
