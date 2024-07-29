@@ -1,5 +1,6 @@
 package com.springboot.springboot.repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,5 +15,10 @@ public interface CheckOutRepo extends JpaRepository<CheckOut,Long>{
     @Transactional
     @Query(value = "SELECT * from check_out where book_id=?1 and member_id=?2", nativeQuery = true)
     public List<CheckOut> findByMobileNumberAndBookId(String bookId,String memberId);
+
+    @Modifying
+    @Transactional
+    @Query(value = "SELECT * from check_out where check_in_date<?1", nativeQuery = true)
+    public List<CheckOut> findDelayed(LocalDate currenDate);
     
 }

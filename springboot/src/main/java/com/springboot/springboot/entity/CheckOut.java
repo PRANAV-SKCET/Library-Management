@@ -1,5 +1,7 @@
 package com.springboot.springboot.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,8 +19,8 @@ public class CheckOut {
     private String bookId;
     private String bookName;
     private String bookAuthor;
-    private String checkOutDate;
-    private String checkInDate;
+    private LocalDate checkOutDate;
+    private LocalDate checkInDate;
     private String status;
 
 

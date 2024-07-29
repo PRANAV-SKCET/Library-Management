@@ -1,7 +1,10 @@
 package com.springboot.springboot.controller;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
+import org.hibernate.annotations.Check;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -157,5 +160,18 @@ public class UserController {
         long id = checkOut.getId();
         checkOutRepo.deleteById(id);
         return "Check In Success";
+    }
+
+    @GetMapping("/getAllCheckOutBooks")
+    public List<CheckOut> getAllCheckOuts()
+    {
+        return checkOutRepo.findAll();
+    }
+
+    @GetMapping("getDelayedCheckOutBooks")
+    public List<CheckOut> getDelayedCheckOutBooks()
+    {
+        LocalDate currentDate = LocalDate.now();
+        return checkOutRepo.findDelayed(currentDate);
     }
 }
