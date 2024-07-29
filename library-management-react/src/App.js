@@ -16,6 +16,7 @@ import ApplyMembership from './components/ApplyMembership';
 import CheckIn from './components/CheckIn';
 import CheckOut from './components/CheckOut';
 import Members from './components/Members';
+import CheckOutFinal from './components/CheckOutFinal';
 
 function App() {
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(() => {
@@ -27,6 +28,8 @@ function App() {
     const savedId = localStorage.getItem('id');
     return savedId ? parseInt(savedId, 10) : 1;
   });
+
+  const [memberMobileNumber,setMemberMobileNumber]=useState('');
   
   useEffect(() => {
     localStorage.setItem('isAdminLoggedIn', isAdminLoggedIn);
@@ -38,7 +41,11 @@ function App() {
 
 
   return (
-    <AuthContext.Provider value={{ isAdminLoggedIn, setIsAdminLoggedIn, id, setId }}>
+    <AuthContext.Provider value={{ 
+      isAdminLoggedIn, setIsAdminLoggedIn, 
+      id, setId ,
+      memberMobileNumber,setMemberMobileNumber
+      }}>
       <div>
         <Router>
           {isAdminLoggedIn && <AdminNavbar />}
@@ -56,6 +63,7 @@ function App() {
             <Route path="/checkOutBooks" element={<CheckOutBooks />} />
             <Route path="/delayedSubmissions" element={<DelayedSubmissions />} />
             <Route path="/members" element={<Members />} />
+            <Route path="/checkOutFinal" element={<CheckOutFinal />} />
           </Routes>
         </Router>
       </div>

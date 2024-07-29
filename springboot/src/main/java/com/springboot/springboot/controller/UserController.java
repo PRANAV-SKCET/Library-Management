@@ -117,4 +117,31 @@ public class UserController {
         }
         return "Book Removed";
     }
+
+    @PostMapping("/verifyMember")
+    public String verifyMember(@RequestParam("mobileNumber") String mobileNumber)
+    {
+        MemberShip memberShip = memberShipRepo.findById(mobileNumber).orElse(null);
+        if(memberShip==null)
+        {
+            return "Member not found";
+        }
+        if(memberShip.getStatus().equals("Not Active"))
+        {
+            return "Member is not active";
+        }
+        return "Member Verified";
+    }
+
+    @GetMapping("/getMemberDetails")
+    public MemberShip getMemberDetails(@RequestParam String mobileNumber)
+    {
+        return memberShipRepo.findById(mobileNumber).orElse(null);
+    }
+
+    @GetMapping("/getBookDetails")
+    public Books getBookDetails(@RequestParam String bookId)
+    {
+        return booksRepo.findById(bookId).orElse(null);
+    }
 }
