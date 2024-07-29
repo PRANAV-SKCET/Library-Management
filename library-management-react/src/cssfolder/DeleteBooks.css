@@ -1,16 +1,40 @@
-.delete-container
-{
+.delete-container {
     width: 100%;
-    height:100vh;
-    background-color: rgb(226, 174, 121);
-    margin: 0px;
-    padding: 0px;
+    height: 100vh;
+    background-image: url("https://cdn.wallpapersafari.com/27/59/JD4mOA.jpg");
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    margin: 0;
+    padding: 20px; /* Added padding for better spacing */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #e8e8e8; /* Light color for general text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds shadow for better readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow around the container */
 }
-.delete-container h1{
-    padding: 0px;
-    margin: 0px;
+
+.delete-container h1 {
+    padding: 10px 0; /* Added padding for spacing */
+    margin: 10px 0; /* Added margin for spacing */
+    font-size: 3em; /* Increased font size for headers */
+    color: #f0e6e6; /* Slightly lighter color for headers */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Stronger shadow for emphasis */
+}
+
+.delete-container p {
+    padding: 5px 0; /* Added padding for spacing */
+    margin: 5px 0; /* Added margin for spacing */
+    font-size: 1.5em; /* Increased font size for paragraphs */
+    color: #fafafa; /* Light color for paragraphs */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Subtle shadow for readability */
+    line-height: 1.5; /* Improved line height for readability */
+}
+
+/* Specific styles for Book ID and Number of Books */
+.delete-container .book-info {
+    color: #fff; /* Light color to contrast the background */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds shadow for better readability */
+    font-weight: bold; /* Bold text for emphasis */
 }

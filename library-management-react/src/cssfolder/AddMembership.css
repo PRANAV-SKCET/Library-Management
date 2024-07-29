@@ -5,7 +5,9 @@
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    background-image: url("http://wallpapercave.com/wp/IlpLRYK.jpg");
+    background-image: url("https://cdn.shopify.com/s/files/1/2305/1167/articles/bookshelf1.jpg?v=1655657739");
+    /* background-repeat: no-repeat; */
+    /* background-image: url("http://wallpapercave.com/wp/IlpLRYK.jpg"); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,14 +15,14 @@
     animation: backgroundAnimation 5s infinite alternate;
 }
 
-@keyframes backgroundAnimation {
+/* @keyframes backgroundAnimation {
     0% {
         background: linear-gradient(to right, #FFA500, #1E90FF);
     }
     100% {
         background: linear-gradient(to right, #1E90FF, #FFA500);
     }
-}
+} */
 
 .AddMembership-heading {
     text-align: center;
