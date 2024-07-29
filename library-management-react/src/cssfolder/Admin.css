@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Arial', sans-serif;
+
 }
 
 .admin-container {
@@ -18,7 +19,7 @@
     margin: 0 auto;
     padding: 0;
     border: 1px solid #070000;
-    border-radius: 12px;
+    border-radius: 19px;
     background-color: rgba(11, 1, 1, 0.8);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
@@ -31,7 +32,7 @@
 
 .admin-image {
     flex: 1;
-    background: url("C:\Users\DELL.I7.ToUCh\Desktop\Library-Management\library-management-react\src\images\adminpage.jpeg") no-repeat center center;
+    background: url("../images/adminpage.jpeg") no-repeat center center;
     background-size: cover;
 }
 
@@ -64,7 +65,7 @@
     width: 100%;
 }
 
-label {
+.admin-form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
@@ -72,7 +73,7 @@ label {
     font-size: 16px;
 }
 
-input {
+.admin-form-group input {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -83,7 +84,7 @@ input {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-input:focus {
+.admin-form-group input:focus {
     border-color: #007BFF;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
     outline: none;
