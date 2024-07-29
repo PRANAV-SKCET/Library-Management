@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.springboot.entity.AdminUsers;
 import com.springboot.springboot.entity.Books;
+import com.springboot.springboot.entity.CheckOut;
 import com.springboot.springboot.entity.MemberShip;
 import com.springboot.springboot.repository.AdminUsersRepo;
 import com.springboot.springboot.repository.BooksRepo;
+import com.springboot.springboot.repository.CheckOutRepo;
 import com.springboot.springboot.repository.MemberShipRepo;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +32,9 @@ public class UserController {
 
     @Autowired
     private MemberShipRepo memberShipRepo;
+
+    @Autowired
+    private CheckOutRepo checkOutRepo;
 
     @PostMapping("/adminLogin")
     public Boolean adminLogin(@RequestBody AdminUsers adminUsers)
@@ -143,5 +148,18 @@ public class UserController {
     public Books getBookDetails(@RequestParam String bookId)
     {
         return booksRepo.findById(bookId).orElse(null);
+    }
+
+    @PostMapping("/checkout")
+    public String checkout(@RequestBody CheckOut checkOut)
+    {
+        String bookId = checkOut.getBookId();
+        Books books = booksRepo.findById(bookId).orElse(null);
+        int f = books.getBooksLeft();
+        f=f-1;
+        books.setBooksLeft(f);
+        booksRepo.save(books);
+        checkOutRepo.save(checkOut);
+        return "Check-Out Successful";
     }
 }
