@@ -1,40 +1,55 @@
 .admin-body {
     width: 100%;
     height: 100vh;
-    margin:0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     background: url("https://cdn.shopify.com/s/files/1/2305/1167/articles/bookshelf1.jpg?v=1655657739");
-    image-resolution: 100%;
     background-size: cover;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-  }
-  
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
 .admin-container {
-    width: 350px;
-    margin: 0px auto;
-    padding: 30px;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
     border: 1px solid #070000;
     border-radius: 12px;
-    background-color: rgba(11, 1, 1, 0.8); /* Slightly transparent background color */
+    background-color: rgba(11, 1, 1, 0.8);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: grid;
-    place-items: center;
     transition: transform 0.3s ease-in-out;
-    background-size: cover; /* Ensures the image covers the entire container */
+    overflow: hidden;
 }
 
 .admin-container:hover {
     transform: scale(1.02);
 }
 
-.admin-container h1 {
+.admin-image {
+    flex: 1;
+    background: url("C:\Users\DELL.I7.ToUCh\Desktop\Library-Management\library-management-react\src\images\adminpage.jpeg") no-repeat center center;
+    background-size: cover;
+}
+
+.admin-login {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+.admin-login h1 {
     margin-bottom: 25px;
-    font-size: 26px;
+    font-size: 28px;
     color: #f3f0f0;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -49,22 +64,22 @@
     width: 100%;
 }
 
-.admin-form-group label {
+label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
     color: #f0e6e6;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
-    font-size: 14px;
-    color:black;
+    font-size: 16px;
+    color: black;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
@@ -82,7 +97,7 @@ input:focus {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
 }
 
@@ -96,7 +111,8 @@ input:focus {
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
 }
 
-.admin-error-message
-{
+.admin-error-message {
     color: #fef9f9;
+    margin-top: 15px;
+    font-size: 14px;
 }
