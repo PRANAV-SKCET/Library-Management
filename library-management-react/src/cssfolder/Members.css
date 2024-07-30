@@ -3,7 +3,6 @@
     max-width: 1200px;
     margin: 0 auto; /* Centers the box horizontally */
     padding: 20px;
-    background-color: #9f2727;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -31,6 +30,20 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: left; /* Aligns text inside list items */
+}
+
+/* Special styling for the first three members */
+.Members li:nth-child(1),
+.Members li:nth-child(2),
+.Members li:nth-child(3) {
+    border: 2px solid gold; /* Highlight border */
+    background-color: #ffffe0; /* Light yellow background for emphasis */
+}
+
+.Members li:nth-child(1) h3,
+.Members li:nth-child(2) h3,
+.Members li:nth-child(3) h3 {
+    color: #d4af37; /* Gold color for text */
 }
 
 .Members p {
