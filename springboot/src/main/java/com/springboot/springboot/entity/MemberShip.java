@@ -15,12 +15,13 @@ public class MemberShip {
     private String gender;
     private String email;
     private String status;
+    private long count;
 
     public MemberShip() {
     }
 
     public MemberShip(String mobileNumber, String name, String memberId, String membershipDate, String dateOfBirth,
-            String address, String gender, String email, String status) {
+            String address, String gender, String email, String status,long count) {
         this.mobileNumber = mobileNumber;
         this.name = name;
         this.memberId = memberId;
@@ -30,6 +31,7 @@ public class MemberShip {
         this.gender = gender;
         this.email = email;
         this.status = status;
+        this.count = count;
     }
 
     public String getMobileNumber() {
@@ -103,5 +105,23 @@ public class MemberShip {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    // public String getDateOfBirth() {
+    //     return dateOfBirth;
+    // }
+
+    // public void setDateOfBirth(String dateOfBirth) {
+    //     this.dateOfBirth = dateOfBirth;
+    // }
+
+    public long getCount() {
+        return count;
+    }
+
+    public void setCount(long count) {
+        this.count = count;
+    }
+
+    
 
 }

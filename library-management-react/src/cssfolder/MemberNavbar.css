@@ -28,7 +28,7 @@
 .MemberNavbar-right {
     display: flex;
     justify-content: center;
-    flex: 2;
+    flex: 1;
 }
 
 .MemberNavbar-link {

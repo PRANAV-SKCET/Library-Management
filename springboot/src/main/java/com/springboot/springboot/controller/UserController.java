@@ -145,6 +145,16 @@ public class UserController {
         books.setBooksLeft(f);
         booksRepo.save(books);
         checkOutRepo.save(checkOut);
+
+        String memId = checkOut.getMemberId();
+
+        List<MemberShip>li=memberShipRepo.getId(memId);
+        MemberShip memberShip = li.get(0);
+        long count = memberShip.getCount();
+        count = count + 1;
+        memberShip.setCount(count);
+        memberShipRepo.save(memberShip);
+        
         return "Check-Out Successful";
     }
 
@@ -159,6 +169,11 @@ public class UserController {
         CheckOut checkOut = li.get(0);
         long id = checkOut.getId();
         checkOutRepo.deleteById(id);
+        Books books = booksRepo.findById(bookId).orElse(null);
+        int f = books.getBooksLeft();
+        f = f + 1;
+        books.setBooksLeft(f);
+        booksRepo.save(books);
         return "Check In Success";
     }
 
