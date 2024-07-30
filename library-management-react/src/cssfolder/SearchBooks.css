@@ -57,7 +57,7 @@
     }
 }
 
-.SearchBook-result {
+.SearchBook-results {
     margin-top: 20px;
     padding: 20px;
     background: linear-gradient(to bottom right, rgb(124, 49, 49), #a49b56);
@@ -73,7 +73,7 @@
 
 
 
-.SearchBook-result p {
+.SearchBook-results p {
     margin: 10px 0; /* Increase margin for better spacing */
     padding: 15px; /* Increase padding for more space */
     background: rgba(255, 255, 255, 0.2);

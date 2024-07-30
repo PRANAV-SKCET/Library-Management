@@ -10,6 +10,7 @@ const ProductCard = ({ book }) => {
             <div className="card-info">
 
                 <h2 className="card-name">{book.bookName}</h2>
+                <p className="card-description"><strong>Book Id:</strong> {book.bookId}</p>
                 <p className="card-description"><strong>Author:</strong> {book.bookAuthor}</p>
                 <p className="card-description"><strong>Shelf Number:</strong> {book.shelfNo}</p>
                 <p className="card-description"><strong>Rack Number:</strong> {book.rackNo}</p>

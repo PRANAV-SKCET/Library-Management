@@ -27,6 +27,8 @@
     transition: color 0.3s ease, transform 0.3s ease;
     position: relative;
     padding: 10px;
+    font-family: monospace;
+
 }
 
 .AdminNavbar-link::after {
