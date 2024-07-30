@@ -3,6 +3,7 @@ import MemberNavbar from "./MemberNavbar";
 import { AuthContext } from "./context";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import '../cssfolder/CheckOutFinal.css';
 
 export default function CheckOutFinal() {
     const {memberMobileNumber} = useContext(AuthContext);
@@ -31,13 +32,11 @@ export default function CheckOutFinal() {
             setTimeout(()=>{
                 setMessage('');
                 navigate("/");
-            },1000)
-            
+            },1000);
         } catch (error) {
             console.error("Error checking out book:", error);
         }
     };
-    
 
     useEffect(() => {
         const fetchMemberDetails = async () => {
@@ -84,35 +83,40 @@ export default function CheckOutFinal() {
 
     return (
         <div>
-            <MemberNavbar />
-            <h2>Check Out Final</h2>
-            <div>
-                <label>Member ID: {memberDetails.memberId}</label>
-                <br />
-                <label>Member Name: {memberDetails.memberName}</label>
-            </div>
-            <div>
-                <label>Book ID</label>
-                <input
-                    type="text"
-                    value={bookId}
-                    onChange={(e) => setBookId(e.target.value)}
-                    placeholder="Enter Book ID"
-                />
-            </div>
-                <div>
-                    <label>Book Name: {bookDetails.bookName}</label>
+        <MemberNavbar />
+        <div className="CheckOutFinal-background">
+            <div className="CheckOutFinal-container">
+            <h2 className="CheckOutFinal-header">Check Out Final</h2>
+            <div className="CheckOutFinal-form">
+            <label className="CheckOutFinal-label">Member ID: {memberDetails.memberId}</label>
                     <br />
-                    <label>Book Author: {bookDetails.bookAuthor}</label>
+                    <label className="CheckOutFinal-label">Member Name: {memberDetails.memberName}</label>
                 </div>
-            <div>
-                <label>Check Out Date: {checkOutDate}</label>
+                <label className="CheckOutFinal-label">Book ID</label>
+                <div className="CheckOutFinal-form-field">
+                <input
+                        className="CheckOutFinal-input"
+                        type="text"
+                        value={bookId}
+                        onChange={(e) => setBookId(e.target.value)}
+                        placeholder="Enter Book ID"
+                    />
+                </div>
+                <div className="CheckOutFinal-form">
+                <label className="CheckOutFinal-label">Book Name: {bookDetails.bookName}</label>
                 <br />
-                <label>Check In Date: {checkInDate}</label>
+                <label className="CheckOutFinal-label">Book Author: {bookDetails.bookAuthor}</label>
+                </div>
+                <div className="CheckOutFinal-form">
+                <label className="CheckOutFinal-label">Check Out Date: {checkOutDate}</label>
                 <br />
-            </div>
-            <button onClick={checkOutButton}>CheckOut</button>
-            {message}
-        </div>
-    );
+                <label className="CheckOutFinal-label">Check In Date: {checkInDate}</label>
+                <br />
+                </div>
+                <button className="CheckOutFinal-button" onClick={checkOutButton}>CheckOut</button>
+                <div className="CheckOutFinal-message">{message}</div>
+                </div>
+                </div>
+                </div>
+            );
 }

@@ -1,0 +1,115 @@
+/* CheckIn.css */
+.CheckIn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f2f6fc; /* Light grey background */
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.CheckIn-card {
+    background: linear-gradient(135deg, #ff9800, #ff5722); /* Orange theme */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: slideIn 1s ease-in-out;
+}
+
+.CheckIn-header {
+    font-size: 2rem;
+    color: white; /* White text color */
+    margin-bottom: 20px;
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+.CheckIn-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CheckIn-form label {
+    display: block;
+    font-size: 1rem;
+    color: white; /* White label color */
+    margin-bottom: 5px;
+    font-weight: bold;
+    align-self: flex-start;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.CheckIn-form input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 30px;
+    background: #f2f6fc;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #333;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.CheckIn-form input::placeholder {
+    color: #aaa;
+}
+
+.CheckIn-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    color: #ff5722; /* Orange button text color */
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+.CheckIn-form button:hover {
+    background-color: #ff5722;
+    color: white;
+}
+
+.CheckIn-message {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: white; /* White message color */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
