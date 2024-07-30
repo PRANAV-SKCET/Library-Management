@@ -58,17 +58,18 @@
 }
 
 .SearchBook-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust size as needed */
+    gap: 20px; /* Adjust the gap between cards */
     margin-top: 20px;
     padding: 20px;
     background: linear-gradient(to bottom right, rgb(124, 49, 49), #a49b56);
     border-radius: 10%;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Increase width to cover the full width of the page */
-    
+    width: 100%;
     color: #940b0b;
     animation: fadeIn 0.5s ease-in-out;
-    overflow-y: auto; /* Add vertical scroll if content overflows */
-    display: flex;
+    overflow-y: auto;
 }
 
 
