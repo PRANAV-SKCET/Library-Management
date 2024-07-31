@@ -10,10 +10,11 @@
 }
 
 body {
-    background: #ecf0f3;
+    /* background: #ecf0f3; */
 }
 
 .CheckOut-background {
+    background-image: url("https://i.pinimg.com/originals/a5/ad/58/a5ad58d71cb993cd0189d018daf97534.jpg");
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -23,13 +24,13 @@ body {
 }
 
 .CheckOut-container {
-    max-width: 400px;
-    min-height: 500px;
+    max-width: 300px;
+    min-height: 400px;
     margin: 80px auto;
     padding: 40px 30px 30px 30px;
     background-color: #ecf0f3;
-    border-radius: 15px;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+    border-radius: 13px;
+    box-shadow: 10px 11px 10px #cbced1, -13px -13px 20px #fff;
     animation: fadeIn 0.6s ease-in-out;
 }
 
