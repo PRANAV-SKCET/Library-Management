@@ -5,13 +5,15 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #f2f6fc; /* Light grey background */
+    background-image: url("https://wallpaperaccess.com/full/892736.jpg");
+
+    /* background: #f2f6fc; Light grey background */
     padding: 20px;
     animation: fadeIn 1s ease-in-out;
 }
 
 .CheckIn-card {
-    background: linear-gradient(135deg, #ff9800, #ff5722); /* Orange theme */
+    background: linear-gradient(135deg, #c4a46d, #c5ada5); /* Orange theme */
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -64,6 +66,7 @@
 .CheckIn-form button {
     width: 100%;
     padding: 15px;
+    
     background-color: white;
     color: #ff5722; /* Orange button text color */
     border: none;
