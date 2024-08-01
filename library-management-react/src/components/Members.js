@@ -55,21 +55,46 @@ export default function Members() {
                 )}
             </div>
 
-            {/* Display the remaining members without hover effect */}
+            {/* Display the remaining members in two rows with three columns each */}
             {remaining.length > 0 && (
                 <div className="remaining">
                     <h3>Library Members</h3>
                     <div className="remaining-container">
                         {remaining.map((application, index) => (
                             <div key={index} className="remaining-item">
-                                <p><strong>Name:</strong> {application.name}</p>
-                                <p><strong>Mobile Number:</strong> {application.mobileNumber}</p>
-                                <p><strong>Member Id:</strong> {application.memberId}</p>
-                                <p><strong>Email:</strong> {application.email}</p>
-                                <p><strong>Date of Birth:</strong> {application.dateOfBirth}</p>
-                                <p><strong>Address:</strong> {application.address}</p>
-                                <p><strong>Gender:</strong> {application.gender}</p>
-                                <p><strong>Status:</strong> {application.status}</p>
+                                <div className="remaining-row">
+                                    <div className="remaining-cell">
+                                        <p><strong>Name:</strong> {application.name}</p>
+                                    </div>
+                                    <div className="remaining-cell">
+                                        <p><strong>Mobile Number:</strong> {application.mobileNumber}</p>
+                                    </div>
+                                    <div className="remaining-cell">
+                                        <p><strong>Member Id:</strong> {application.memberId}</p>
+                                    </div>
+                                </div>
+                                <div className="remaining-row">
+                                    <div className="remaining-cell">
+                                        <p><strong>Email:</strong> {application.email}</p>
+                                    </div>
+                                    <div className="remaining-cell">
+                                        <p><strong>Date of Birth:</strong> {application.dateOfBirth}</p>
+                                    </div>
+                                    <div className="remaining-cell">
+                                        <p><strong>Address:</strong> {application.address}</p>
+                                    </div>
+                                </div>
+                                <div className="remaining-row">
+                                    <div className="remaining-cell">
+                                        <p><strong>Gender:</strong> {application.gender}</p>
+                                    </div>
+                                    <div className="remaining-cell">
+                                        <p><strong>Status:</strong> {application.status}</p>
+                                    </div>
+                                    <div className="remaining-cell">
+                                        {/* Empty cell to maintain the 3-column layout */}
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>

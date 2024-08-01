@@ -137,3 +137,49 @@
     color: #333;
     transition: color 0.3s ease;
 }
+
+/* Container for the remaining members */
+.Members .remaining {
+    background-color: #fff; /* White background */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Heading for the remaining members section */
+.Members .remaining h3 {
+    margin-bottom: 15px;
+    color: #333; /* Dark text for contrast */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Container for the flex column layout */
+.Members .remaining-container {
+    display: flex;
+    flex-direction: column; /* Vertical stacking */
+    gap: 20px; /* Space between each remaining member block */
+}
+
+/* Each block of remaining members */
+.Members .remaining-item {
+    display: flex;
+    flex-direction: column; /* Vertical stacking */
+    gap: 20px; /* Space between rows */
+}
+
+/* Each row in the remaining member block */
+.Members .remaining-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Each cell in the row */
+.Members .remaining-cell {
+    width: 30%; /* Adjust width for 3 columns */
+    padding: 10px;
+    background-color: #f9f9f9; /* Light background for cells */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333; /* Dark text color */
+}
