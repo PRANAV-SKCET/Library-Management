@@ -37,7 +37,7 @@ export default function Members() {
 
             {/* Display the first three members with hover effect */}
             <div className="first-three">
-                <h3>First Three Members</h3>
+                <h3>Leading User</h3>
                 {firstThree.length > 0 ? (
                     <ul>
                         {firstThree.map((application, index) => (
@@ -46,7 +46,7 @@ export default function Members() {
                                 onMouseEnter={() => handleMouseEnter(application)}
                                 onMouseLeave={handleMouseLeave}
                             >
-                                <p><strong>Member {index + 1}</strong></p>
+                                <p><strong>Leading User {index + 1}</strong></p>
                             </li>
                         ))}
                     </ul>
