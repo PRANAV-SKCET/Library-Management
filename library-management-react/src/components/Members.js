@@ -27,22 +27,56 @@ export default function Members() {
         setHoveredMember(null);
     };
 
+    // Separate the applications into two arrays
+    const firstThree = applications.slice(0, 3);
+    const remaining = applications.slice(3);
+
     return (
         <div className="Members">
             <h2>Our Library Members</h2>
-            {applications.length > 0 ? (
-                <ul>
-                    {applications.slice(0, 3).map((application, index) => (
-                        <li key={index}
-                            onMouseEnter={() => handleMouseEnter(application)}
-                            onMouseLeave={handleMouseLeave}>
-                            <p><strong>Member {index + 1}</strong></p>
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p>No Members Present</p>
+
+            {/* Display the first three members with hover effect */}
+            <div className="first-three">
+                <h3>First Three Members</h3>
+                {firstThree.length > 0 ? (
+                    <ul>
+                        {firstThree.map((application, index) => (
+                            <li
+                                key={index}
+                                onMouseEnter={() => handleMouseEnter(application)}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                <p><strong>Member {index + 1}</strong></p>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>No Members Present</p>
+                )}
+            </div>
+
+            {/* Display the remaining members without hover effect */}
+            {remaining.length > 0 && (
+                <div className="remaining">
+                    <h3>Library Members</h3>
+                    <div className="remaining-container">
+                        {remaining.map((application, index) => (
+                            <div key={index} className="remaining-item">
+                                <p><strong>Name:</strong> {application.name}</p>
+                                <p><strong>Mobile Number:</strong> {application.mobileNumber}</p>
+                                <p><strong>Member Id:</strong> {application.memberId}</p>
+                                <p><strong>Email:</strong> {application.email}</p>
+                                <p><strong>Date of Birth:</strong> {application.dateOfBirth}</p>
+                                <p><strong>Address:</strong> {application.address}</p>
+                                <p><strong>Gender:</strong> {application.gender}</p>
+                                <p><strong>Status:</strong> {application.status}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             )}
+
+            {/* Hover effect box */}
             {hoveredMember && (
                 <div className="hover-box">
                     <div className="hover-content">

@@ -1,18 +1,20 @@
+/* Container for all member-related content */
 .Members {
     width: 80%;
     max-width: 1200px;
-    margin: 0 auto; /* Centers the box horizontally */
+    margin: 0 auto; /* Centers the container horizontally */
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     text-align: center; /* Centers the text */
-    background-image: url('https://cdn.wallpapersafari.com/65/45/0Wonwb.jpg '); /* Replace with your image path */
+    background-image: url('https://cdn.wallpapersafari.com/65/45/0Wonwb.jpg'); /* Replace with your image path */
     background-size: cover; /* Ensures the image covers the whole area */
     background-position: center; /* Centers the image */
     color: #fff; /* Ensures the text is readable */
 }
 
+/* Heading for the main section */
 .Members h2 {
     margin-bottom: 20px;
     color: #fff; /* White text for contrast */
@@ -20,17 +22,30 @@
     font-weight: bold;
 }
 
-.Members ul {
+/* Container for the first three members */
+.Members .first-three {
+    margin-bottom: 30px; /* Space before remaining members */
+}
+
+.Members .first-three h3 {
+    margin-bottom: 15px;
+    color: #fff; /* White text for contrast */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Styles for the first three members list */
+.Members .first-three ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.Members li {
-    position: relative;
-    width: 30%;
+.Members .first-three li {
+    width: 30%; /* Adjust width as needed */
     height: 100px;
     margin-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
@@ -46,11 +61,48 @@
     color: #333; /* Dark text color */
 }
 
-.Members li:hover {
+/* Hover effect for the first three members */
+.Members .first-three li:hover {
     transform: scale(1.02);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Container for the remaining members */
+.Members .remaining {
+    background-color: #fff; /* White background */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Heading for the remaining members section */
+.Members .remaining h3 {
+    margin-bottom: 15px;
+    color: #333; /* Dark text for contrast */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Container for the remaining members items */
+.Members .remaining-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Styles for each item in the remaining members */
+.Members .remaining-item {
+    width: 30%; /* Adjust width as needed */
+    margin-bottom: 20px;
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Aligns text inside item to the left */
+    padding: 20px; /* Extra padding for larger content */
+    color: #333; /* Dark text color */
+}
+
+/* Styles for hover effect box */
 .hover-box {
     position: fixed;
     top: 50%;
@@ -66,11 +118,13 @@
     text-align: left;
 }
 
+/* Styles for hover effect content */
 .hover-content {
     display: flex;
     flex-direction: column;
 }
 
+/* Styles for paragraphs */
 .Members p {
     margin: 5px 0;
     color: #333;
@@ -78,18 +132,8 @@
     transition: color 0.3s ease;
 }
 
+/* Styles for strong text in paragraphs */
 .Members p strong {
     color: #333;
     transition: color 0.3s ease;
-}
-
-.Members .member-details {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.Members li:hover .member-details {
-    display: flex;
 }
