@@ -1,0 +1,120 @@
+/* DelayedSubmissions.css */
+
+.DelayedSubmissions-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f0f0f0, #ffffff);
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+.DelayedSubmissions-heading {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    animation: slideInFromTop 1s ease-in-out;
+    position: relative;
+}
+
+.DelayedSubmissions-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 50px;
+    height: 3px;
+    background-color: #007bff;
+    transform: translateX(-50%);
+}
+
+.DelayedSubmissions-card {
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.DelayedSubmissions-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    transition: all 0.5s;
+}
+
+.DelayedSubmissions-card:hover::before {
+    left: 100%;
+}
+
+.DelayedSubmissions-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.DelayedSubmissions-card div {
+    display: flex;
+    flex-direction: column;
+}
+
+.DelayedSubmissions-card p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.DelayedSubmissions-card p strong {
+    color: #333;
+}
+
+.DelayedSubmissions-label {
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+}
+
+.DelayedSubmissions-value {
+    font-weight: normal;
+    color: #555;
+    font-size: 18px;
+}
+
+.DelayedSubmissions-divider {
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
