@@ -55,7 +55,7 @@ export default function Members() {
                 )}
             </div>
 
-            {/* Display the remaining members in two rows with three columns each */}
+            {/* Display the remaining members without hover effect */}
             {remaining.length > 0 && (
                 <div className="remaining">
                     <h3>Library Members</h3>
@@ -92,7 +92,7 @@ export default function Members() {
                                         <p><strong>Status:</strong> {application.status}</p>
                                     </div>
                                     <div className="remaining-cell">
-                                        {/* Empty cell to maintain the 3-column layout */}
+                                        {/* Empty cell or additional info */}
                                     </div>
                                 </div>
                             </div>

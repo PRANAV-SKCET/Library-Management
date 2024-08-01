@@ -22,12 +22,12 @@
     font-weight: bold;
 }
 
-/* Styles for the first three members */
+/* Container for the first three members */
 .Members .first-three {
     margin-bottom: 30px;
 }
 
-/* Container for the first three members */
+/* Container for the first three members' list */
 .Members .first-three ul {
     list-style: none;
     padding: 0;
@@ -39,7 +39,7 @@
 /* Each item in the first three members */
 .Members .first-three li {
     position: relative;
-    width: 30%; /* Adjust width as needed */
+    width: 30%;
     height: 100px;
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
     border: 1px solid #ddd;
@@ -66,7 +66,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9); /* Ensure background is light for readability */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -74,6 +74,24 @@
     width: 80%;
     max-width: 600px;
     text-align: left;
+}
+
+/* Content inside hover-box */
+.hover-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover box text */
+.hover-box p {
+    margin: 5px 0;
+    color: #333; /* Dark text color for contrast */
+    font-size: 16px;
+}
+
+/* Heading inside hover-box */
+.hover-box p strong {
+    color: #333; /* Dark text color for contrast */
 }
 
 /* Styles for the remaining members section */
@@ -94,7 +112,7 @@
 /* Container for the remaining members items */
 .Members .remaining-container {
     display: flex;
-    flex-direction: column; /* Stacks items vertically */
+    flex-wrap: wrap; /* Allows wrapping for rows */
     gap: 20px; /* Space between each member block */
 }
 
@@ -104,19 +122,24 @@
     flex-direction: column; /* Stacks rows vertically */
     gap: 20px; /* Space between rows */
     width: 100%; /* Full width */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9; /* Light background for each item */
 }
 
 /* Each row in the remaining member block */
 .Members .remaining-row {
     display: flex;
     justify-content: space-between; /* Space between columns */
+    gap: 10px; /* Space between cells */
 }
 
 /* Each cell in the row */
 .Members .remaining-cell {
-    width: 30%; /* Adjust width for 3 columns */
+    flex: 1; /* Flexbox to allow cells to grow equally */
     padding: 10px;
-    background-color: #f9f9f9; /* Light background for cells */
+    background-color: #fff; /* White background for cells */
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
