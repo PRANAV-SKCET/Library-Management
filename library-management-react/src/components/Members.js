@@ -4,6 +4,7 @@ import '../cssfolder/Members.css'; // Import your CSS file
 
 export default function Members() {
     const [applications, setApplications] = useState([]);
+    const [hoveredMember, setHoveredMember] = useState(null);
 
     const fetchApplications = async () => {
         try {
@@ -18,26 +19,43 @@ export default function Members() {
         fetchApplications();
     }, []);
 
+    const handleMouseEnter = (application) => {
+        setHoveredMember(application);
+    };
+
+    const handleMouseLeave = () => {
+        setHoveredMember(null);
+    };
+
     return (
         <div className="Members">
             <h2>Our Library Members</h2>
             {applications.length > 0 ? (
                 <ul>
-                    {applications.map((application, index) => (
-                        <li key={index}>
-                            <p><strong>Name:</strong> {application.name}</p>
-                            <p><strong>Mobile Number:</strong> {application.mobileNumber}</p>
-                            <p><strong>Member Id:</strong> {application.memberId}</p>
-                            <p><strong>Email:</strong> {application.email}</p>
-                            <p><strong>Date of Birth:</strong> {application.dateOfBirth}</p>
-                            <p><strong>Address:</strong> {application.address}</p>
-                            <p><strong>Gender:</strong> {application.gender}</p>
-                            <p><strong>Status:</strong> {application.status}</p>
+                    {applications.slice(0, 3).map((application, index) => (
+                        <li key={index}
+                            onMouseEnter={() => handleMouseEnter(application)}
+                            onMouseLeave={handleMouseLeave}>
+                            <p><strong>Member {index + 1}</strong></p>
                         </li>
                     ))}
                 </ul>
             ) : (
                 <p>No Members Present</p>
+            )}
+            {hoveredMember && (
+                <div className="hover-box">
+                    <div className="hover-content">
+                        <p><strong>Name:</strong> {hoveredMember.name}</p>
+                        <p><strong>Mobile Number:</strong> {hoveredMember.mobileNumber}</p>
+                        <p><strong>Member Id:</strong> {hoveredMember.memberId}</p>
+                        <p><strong>Email:</strong> {hoveredMember.email}</p>
+                        <p><strong>Date of Birth:</strong> {hoveredMember.dateOfBirth}</p>
+                        <p><strong>Address:</strong> {hoveredMember.address}</p>
+                        <p><strong>Gender:</strong> {hoveredMember.gender}</p>
+                        <p><strong>Status:</strong> {hoveredMember.status}</p>
+                    </div>
+                </div>
             )}
         </div>
     );
