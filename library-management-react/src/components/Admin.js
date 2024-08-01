@@ -4,6 +4,8 @@ import '../cssfolder/Admin.css';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './context';
 import { useContext } from 'react';
+import EmailIcon from '@mui/icons-material/Email';
+import PasswordIcon from '@mui/icons-material/Password';
 
 export default function Admin() {
     const [email, setEmail] = useState('');
@@ -44,7 +46,7 @@ export default function Admin() {
                     <h1>Admin Login</h1>
                     <form className="admin-form" onSubmit={handleSubmit}>
                         <div className="admin-form-group">
-                            <label htmlFor="email">Email:</label>
+                            <label htmlFor="email" className='emailform'><EmailIcon/>Email:</label>
                             <input 
                                 type="email" 
                                 id="email" 
@@ -55,7 +57,7 @@ export default function Admin() {
                             />
                         </div>
                         <div className="admin-form-group">
-                            <label htmlFor="password">Password:</label>
+                            <label htmlFor="password"><PasswordIcon/>Password:</label>
                             <input 
                                 type="password" 
                                 id="password" 

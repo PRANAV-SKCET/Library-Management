@@ -30,7 +30,7 @@ body {
     padding: 40px 30px 30px 30px;
     background-color: #ecf0f3;
     border-radius: 13px;
-    box-shadow: 10px 11px 10px #cbced1, -13px -13px 20px #fff;
+    box-shadow: 10px 11px 10px #cbced1, -3px -3px 20px #fff;
     animation: fadeIn 0.6s ease-in-out;
 }
 
