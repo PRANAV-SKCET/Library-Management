@@ -1,22 +1,82 @@
-/* src/App.css */
-button {
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+.AdminHome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-image: url("https://i.pinimg.com/originals/44/99/54/4499543a663da918ff3ef755d1b6339c.jpg");
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.AdminHome-heading {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.AdminHome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.AdminHome-descriptionBox {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+}
+
+.AdminHome-descriptionText {
+  font-size: 1.2em;
+  line-height: 1.5;
+  display: inline-block;
+  white-space: nowrap;
+  position: absolute;
+  animation: scroll-right-to-left 15s linear infinite;
+}
+
+@keyframes scroll-right-to-left {
+  0% {
+    transform: translateX(100%);
   }
-  
-  button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: black;
+  100% {
+    transform: translateX(-100%);
   }
-  .box{
-    height: 16em;
-    width: 40%;
-  }
-  
+}
+
+.AdminHome-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.AdminHome-button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.AdminHome-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: black;
+}
+
+.AdminHome-footer {
+  margin-top: auto;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
