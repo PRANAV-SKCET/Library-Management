@@ -3,6 +3,7 @@
     background: url('https://i.pinimg.com/originals/41/94/11/419411ac8ebae82f8ed8a3863e092db9.jpg');
     background-size: cover;
     padding: 50px 0;
+    height: 100vh;
 }
 
 .AddBook-container {
@@ -11,7 +12,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 500px;
-    margin: 0 auto;
+    margin:  auto;
     padding: 20px 40px;
     display: flex;
     flex-direction: column;
