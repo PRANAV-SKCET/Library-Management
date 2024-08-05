@@ -32,6 +32,7 @@ export default function Members() {
     const remaining = applications.slice(3);
 
     return (
+        <div className="main-member">
         <div className="Members">
             <h2>Our Library Members</h2>
 
@@ -116,6 +117,7 @@ export default function Members() {
                     </div>
                 </div>
             )}
+        </div>
         </div>
     );
 }
