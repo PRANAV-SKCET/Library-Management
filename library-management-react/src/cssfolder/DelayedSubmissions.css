@@ -123,3 +123,25 @@
     from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
+/* Button styling */
+.DelayedSubmissions-card button {
+    background-color: #e74c3c; /* Red color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 8px ; /* Smaller size */
+    font-size: 16px; /* Smaller font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.DelayedSubmissions-card button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+.DelayedSubmissions-card button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3); /* Red outline */
+}
