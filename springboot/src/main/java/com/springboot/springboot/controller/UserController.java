@@ -22,6 +22,7 @@ import com.springboot.springboot.repository.CheckOutRepo;
 import com.springboot.springboot.repository.MemberShipRepo;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -188,5 +189,13 @@ public class UserController {
     {
         LocalDate currentDate = LocalDate.now();
         return checkOutRepo.findDelayed(currentDate);
+    }
+
+    @GetMapping("/getMemberMail/{memberId}")
+    public String getMemberMail(@PathVariable String memberId)
+    {
+        List<MemberShip> memberShip = memberShipRepo.getId(memberId);
+        String mail = memberShip.get(0).getEmail();
+        return mail;
     }
 }
