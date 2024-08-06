@@ -150,7 +150,6 @@ export default function ApplyMembership() {
                                     required
                                 />
                             </div>
-                            <hr className="ApplyMembership-divider" />
                             <div className="ApplyMembership-submit-container">
                                 <button type="submit" className="ApplyMembership-submit-button">Submit</button>
                             </div>
