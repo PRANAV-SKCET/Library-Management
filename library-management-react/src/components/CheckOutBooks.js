@@ -19,6 +19,7 @@ export default function CheckOutBooks() {
     }, []);
 
     return (
+        <div className="main-checkoutbooks">
         <div className="checkOutContainer">
             <h2 className="checkOutTitle">All Check Out Books</h2>
             {checkOutBooks.map((checkOut, index) => (
@@ -37,6 +38,7 @@ export default function CheckOutBooks() {
                     </div>
                 </div>
             ))}
+        </div>
         </div>
     );
 }

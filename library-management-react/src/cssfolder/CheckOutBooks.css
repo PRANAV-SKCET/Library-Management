@@ -1,32 +1,51 @@
+.main-checkoutbooks{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("https://cdn.shopify.com/s/files/1/2305/1167/articles/bookshelf1.jpg?v=1655657739");
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+}
+
 .checkOutContainer {
     width: 80%;
     max-width: 1200px;
-    margin: 0 auto; /* Centers the box horizontally */
+    margin: 20px auto; /* Center the box horizontally */
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for consistency */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+    border-radius: 15px; /* Match border-radius with .DelayedSubmissions-container */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .checkOutTitle {
     text-align: center;
     margin-bottom: 30px;
-    color: #333;
-    font-size: 28px;
+    color: #ffffff; /* White text color to contrast with the background */
+    font-size: 32px; /* Match font-size with .DelayedSubmissions-heading */
     font-weight: bold;
+    border-bottom: 2px solid #007bff; /* Match border color */
+    padding-bottom: 10px;
+    animation: slideInFromTop 1s ease-in-out; /* Apply animation */
 }
 
 .checkOutItem {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for consistency */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+    border-radius: 12px; /* Match border-radius with .DelayedSubmissions-card */
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Three columns per row */
     gap: 20px; /* Space between columns */
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transitions */
+    animation: fadeInUp 0.5s ease-in-out; /* Apply animation */
+}
+
+.checkOutItem:hover {
+    transform: scale(1.03); /* Slightly enlarge the item on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Increase box-shadow on hover */
 }
 
 .checkOutItem div {
@@ -36,10 +55,21 @@
 
 .checkOutItem p {
     margin: 5px 0;
-    color: #555;
-    font-size: 16px;
+    color: #ffffff; /* White text color to contrast with the background */
+    font-size: 18px; /* Adjusted font-size for better readability */
 }
 
 .checkOutItem p strong {
-    color: #333;
+    color: #ffffff; /* Ensure strong text is also visible */
+}
+
+/* Keyframes for animations */
+@keyframes slideInFromTop {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }

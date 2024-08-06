@@ -1,12 +1,17 @@
-
+/* ProductCard CSS */
 .productcard {
-    border: 1px solid #ddd;
-    background-color: #ddd;
-    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+    border-radius: 15px; /* Consistent border-radius */
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Remove width to allow grid layout to handle sizing */
-    /* width: 100%; */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for consistency */
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.productcard:hover {
+    transform: scale(1.03); /* Slightly enlarge the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase box-shadow on hover */
 }
 
 .card-info {
@@ -14,24 +19,45 @@
 }
 
 .card-name {
-    font-size: 5 em;
+    font-size: 2rem; /* Adjusted font-size for better consistency */
+    color: #ffffff; /* White text color */
     margin: 10px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Add text-shadow for readability */
 }
 
 .card-description {
-    font-size: 3 em;
-    color: #555;
+    font-size: 1.2rem; /* Adjusted font-size for better readability */
+    color: #ffffff; /* White text color for consistency */
+    margin: 5px 0;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for description */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow for consistency */
 }
 
 .card-button {
-    background-color: #7e0e0e;
+    background-color: #7e0e0e; /* Dark red background */
     color: white;
     border: none;
-    padding: 10px 10px;
+    padding: 10px 20px; /* Adjusted padding for better appearance */
+    border-radius: 30px; /* Consistent with other buttons */
     cursor: pointer;
     margin-top: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .card-button:hover {
-    background-color: #3a2828;
+    background-color: #557694; /* Adjusted hover color to match other buttons */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

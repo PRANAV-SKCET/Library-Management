@@ -1,21 +1,30 @@
 /* DelayedSubmissions.css */
+.main-delayed{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("https://i.pinimg.com/originals/44/99/54/4499543a663da918ff3ef755d1b6339c.jpg");
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+}
 
 .DelayedSubmissions-container {
     width: 80%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
-    background: linear-gradient(135deg, #f0f0f0, #ffffff);
-    border: 1px solid #ddd;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border for contrast */
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.7s ease-in-out;
 }
 
+
+
 .DelayedSubmissions-heading {
     text-align: center;
     margin-bottom: 30px;
-    color: #333;
     font-size: 32px;
     font-weight: bold;
     border-bottom: 2px solid #007bff;
@@ -36,7 +45,7 @@
 }
 
 .DelayedSubmissions-card {
-    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     border: 1px solid #ddd;
     border-radius: 12px;
     padding: 20px;
@@ -78,24 +87,20 @@
 
 .DelayedSubmissions-card p {
     margin: 5px 0;
-    color: #555;
     font-size: 18px;
     line-height: 1.5;
 }
 
 .DelayedSubmissions-card p strong {
-    color: #333;
 }
 
 .DelayedSubmissions-label {
     font-weight: bold;
-    color: #333;
     font-size: 18px;
 }
 
 .DelayedSubmissions-value {
     font-weight: normal;
-    color: #555;
     font-size: 18px;
 }
 

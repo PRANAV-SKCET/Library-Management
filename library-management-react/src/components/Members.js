@@ -92,9 +92,8 @@ export default function Members() {
                                     <div className="remaining-cell">
                                         <p><strong>Status:</strong> {application.status}</p>
                                     </div>
-                                    <div className="remaining-cell">
-                                        {/* Empty cell or additional info */}
-                                    </div>
+                                    {/* <div className="remaining-cell">
+                                    </div> */}
                                 </div>
                             </div>
                         ))}
