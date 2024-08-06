@@ -23,55 +23,35 @@
   width: 100%;
 }
 
-.AdminHome-descriptionBox {
+.AdminHome-swiper {
+  width: 90%;
+  height: 70%;
+  margin-top: 20px;
+}
+
+.AdminHome-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 50px;
   border-radius: 10px;
-  margin-bottom: 20px;
-  width: 80%;
-  overflow: hidden;
-  position: relative;
-}
-
-.AdminHome-descriptionText {
-  font-size: 1.2em;
-  line-height: 1.5;
-  display: inline-block;
-  white-space: nowrap;
-  position: absolute;
-  animation: scroll-right-to-left 15s linear infinite;
-}
-
-@keyframes scroll-right-to-left {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.AdminHome-box {
-  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
-  border-radius: 10px;
-}
-
-.AdminHome-button {
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: transparent;
   color: white;
-  border: 2px solid white;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+  width: 100%;
+  height: 100%;
 }
 
-.AdminHome-button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: black;
+.AdminHome-slideText {
+  text-align: center;
+}
+
+.AdminHome-slideHeading {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.AdminHome-slideDescription {
+  font-size: 1.2em;
 }
 
 .AdminHome-footer {

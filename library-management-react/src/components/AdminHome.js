@@ -1,4 +1,7 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
 import '../cssfolder/AdminHome.css';
 
 const AdminHomePage = () => {
@@ -6,27 +9,44 @@ const AdminHomePage = () => {
     <div className="AdminHome-container">
       <h1 className="AdminHome-heading">Library Management System - Admin Home Page</h1>
       <div className="AdminHome-section">
-        <div className="AdminHome-descriptionBox">
-          <p className="AdminHome-descriptionText">
-            Welcome to the Library Management System. Here you can manage the entire library, including adding and removing books, viewing all books, and managing user accounts. Our system ensures a seamless and efficient way to handle all library operations.
-          </p>
-        </div>
-        <div className="AdminHome-descriptionBox">
-          <p className="AdminHome-descriptionText">
-            To disseminate the scholarly resources among the users through automation and open-source software packages.
-          </p>
-        </div>
-        <div className="AdminHome-descriptionBox">
-          <p className="AdminHome-descriptionText">
-            A well-structured, user-friendly library website is a vital asset for any modern library.
-          </p>
-        </div>
-        <div className="AdminHome-box">
-          <button className="AdminHome-button">Library Details</button>
-          <button className="AdminHome-button">Feedback</button>
-          <button className="AdminHome-button">About Us</button>
-          <button className="AdminHome-button">Contact Us</button>
-        </div>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000 }}
+          className="AdminHome-swiper"
+        >
+          {/* Slide 1 */}
+          <SwiperSlide>
+            <div className="AdminHome-slide">
+              <div className="AdminHome-slideText">
+                <h2 className="AdminHome-slideHeading">Manage Books Efficiently</h2>
+                <p className="AdminHome-slideDescription">Seamlessly add, remove, and view all books in the library.</p>
+              </div>
+            </div>
+          </SwiperSlide>
+          {/* Slide 2 */}
+          <SwiperSlide>
+            <div className="AdminHome-slide">
+              <div className="AdminHome-slideText">
+                <h2 className="AdminHome-slideHeading">Automated User Management</h2>
+                <p className="AdminHome-slideDescription">Efficiently manage user accounts with our robust system.</p>
+              </div>
+            </div>
+          </SwiperSlide>
+          {/* Slide 3 */}
+          <SwiperSlide>
+            <div className="AdminHome-slide">
+              <div className="AdminHome-slideText">
+                <h2 className="AdminHome-slideHeading">Real-time Reporting</h2>
+                <p className="AdminHome-slideDescription">Access comprehensive reports on library operations in real time.</p>
+              </div>
+            </div>
+          </SwiperSlide>
+          {/* Add more slides as needed */}
+        </Swiper>
       </div>
       <footer className="AdminHome-footer">
         &copy; {new Date().getFullYear()} Library Management System. All rights reserved.
