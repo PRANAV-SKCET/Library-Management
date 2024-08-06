@@ -1,188 +1,156 @@
-/* ApplyMembership.css */
-
-body {
-    margin: 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f4f4f4; /* Light background for contrast */
-}
-
-/* Main container for the membership application */
 .ApplyMembership-body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url("http://www.pixelstalk.net/wp-content/uploads/2016/08/1920x1200-Library-Wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Full viewport height */
-    padding: 20px; /* Padding around the container */
+    animation: backgroundAnimation 5s infinite alternate;
 }
 
 .ApplyMembership-container {
+    width: 60%;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     display: flex;
-    flex-direction: row; /* Default to row layout */
-    background-color: #ffffff; /* White background for cards */
-    border-radius: 15px; /* Rounded corners for modern look */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    flex-direction: row;
+    animation: fadeInUp 0.8s ease-in-out, boxShadowAnimation 3s infinite alternate;
     overflow: hidden;
-    max-width: 900px; /* Max width for the card */
-    width: 100%;
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.ApplyMembership-container:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-}
-
-/* Image section */
 .ApplyMembership-image {
-    flex: 1;
-    background-image: url('data:image/jpeg;base64,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'); /* Path to your image */
+    width: 40%;
+    background-image: url("https://images.hdqwalls.com/download/women-with-books-in-library-dp-3840x2160.jpg");
     background-size: cover;
     background-position: center;
-    height: 450px; /* Fixed height for image section */
 }
 
-/* Form container */
 .ApplyMembership-form-container {
-    flex: 1.5;
-    padding: 2rem; /* Padding inside the form */
+    width: 60%;
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 20px;
 }
 
-/* Header styles */
 .ApplyMembership-header {
-    font-size: 2rem; /* Larger font size for header */
-    color: #333; /* Dark text color */
-    margin-bottom: 1rem; /* Margin below header */
-    text-align: center; /* Center the header */
-}
-
-/* Error message styles */
-.error-message {
-    color: red;
-    margin-bottom: 0.5rem;
     text-align: center;
+    color: #333;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 0.8s ease-in-out;
 }
 
-/* Form styles */
-.ApplyMembership-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; /* Space between form groups */
-}
-
-/* Form group styles */
 .ApplyMembership-form-group {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-/* Label styles */
 .ApplyMembership-form-group label {
-    margin-bottom: 0.25rem; /* Space below label */
-    color: #555; /* Dark gray color for labels */
-    font-weight: bold; /* Bold labels */
-    transition: color 0.3s ease; /* Smooth transition for color change */
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
 }
 
-/* Input and Select styles */
-.ApplyMembership-form-group input,
-.ApplyMembership-form-group select {
-    padding: 1rem; /* Inner padding for input */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 5px; /* Slightly rounded corners */
-    font-size: 1rem; /* Font size for inputs */
-    color: #333; /* Dark text color */
-    outline: none; /* Remove default outline */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+.ApplyMembership-form-group input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s;
 }
 
-/* Focus state for inputs */
 .ApplyMembership-form-group input:focus {
-    border-color: #4b384c; /* Change border color on focus */
-    box-shadow: 0 0 5px rgba(75, 56, 76, 0.2); /* Subtle shadow on focus */
+    border: 1px solid #1E90FF;
+    outline: none;
 }
 
-/* Gender button group */
 .ApplyMembership-gender-group {
     display: flex;
-    justify-content: space-between;
-    padding: 0.5rem;
-    background-color: #fff; /* White background */
-    border-radius: 5px; /* Rounded corners */
-    border: 1px solid #ddd; /* Light border */
+    gap: 10px;
 }
 
-/* Gender button styles */
 .ApplyMembership-gender-button {
-    flex: 1;
-    padding: 0.75rem; /* Padding for buttons */
-    border: none; /* Remove default border */
-    font-size: 0.875rem; /* Font size for buttons */
-    color: #333; /* Dark text color */
-    cursor: pointer; /* Pointer cursor on hover */
-    background-color: transparent; /* Transparent background */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
-/* Active button styles */
-.ApplyMembership-gender-button.active {
-    background-color: #333; /* Active button color */
-    color: #fff; /* White text on active button */
+.ApplyMembership-gender-button.active,
+.ApplyMembership-gender-button:hover {
+    background-color: #1E90FF;
+    color: white;
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
 }
 
-/* Divider styles */
-.ApplyMembership-divider {
-    border: none;
-    border-top: 1px solid #ccc; /* Light gray divider */
-    margin: 1rem 0; /* Margin around divider */
-}
-
-/* Submit button container */
 .ApplyMembership-submit-container {
-    position: relative; /* For positioning elements inside */
+    text-align: center;
 }
 
-/* Submit button styles */
 .ApplyMembership-submit-button {
-    background-color: #4b384c; /* Dark background for button */
-    color: white; /* White text */
-    padding: 0.75rem; /* Padding for button */
-    border: none; /* Remove default border */
-    border-radius: 8px; /* Rounded corners */
-    font-size: 1rem; /* Font size for button */
-    cursor: pointer; /* Pointer cursor */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
-    width: 100%; /* Full width button */
-    margin-top: 1rem; /* Margin above button */
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #1E90FF, #87CEEB);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+    font-size: 18px;
 }
 
-/* Button hover effect */
 .ApplyMembership-submit-button:hover {
-    background-color: #6d6a78; /* Lighter background on hover */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
+    background: linear-gradient(135deg, #87CEEB, #1E90FF);
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+    transform: translateY(-3px);
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    .ApplyMembership-container {
-        flex-direction: column; /* Stack elements vertically */
-    }
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
 
-    .ApplyMembership-image {
-        height: 200px; /* Adjust image height for mobile */
+@keyframes boxShadowAnimation {
+    0% {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     }
-
-    .ApplyMembership-form-container {
-        padding: 1rem; /* Less padding on mobile */
+    100% {
+        box-shadow: 0 8px 50px rgba(0, 0, 0, 0.5);
     }
+}
 
-    .ApplyMembership-header {
-        font-size: 1.5rem; /* Adjust header size for mobile */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    .ApplyMembership-submit-button {
-        font-size: 1rem; /* Adjust button size for mobile */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

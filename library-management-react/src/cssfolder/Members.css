@@ -1,9 +1,10 @@
 /* Main section background */
 .main-member {
-    background-image: url("https://cdn.shopify.com/s/files/1/2305/1167/articles/bookshelf1.jpg?v=1655657739");
+    background-image: url("https://cdn.wallpapersafari.com/14/23/yKPjWI.jpg");
     background-size: cover; /* Ensures the image covers the whole area */
     background-position: center; /* Centers the image */
     background-attachment: fixed; /* Fixes the background image */
+    min-height: 100vh;
 }
 
 /* Container for the entire Members section */
