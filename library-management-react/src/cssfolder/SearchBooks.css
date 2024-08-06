@@ -32,11 +32,20 @@
     font-size: 1rem; /* Adjusted font-size for better readability */
     color: #ffffff; /* White text color for consistency */
     margin: 5px 0;
+    width: 300px;
     background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow for consistency */
+    height: 60px; /* Fixed height for consistency, adjust as needed */
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflowed text */
+    display: -webkit-box; /* Required for ellipsis on multi-line text */
+    -webkit-line-clamp: 4; /* Limit to 4 lines */
+    -webkit-box-orient: vertical; /* Set vertical box orientation */
+    
 }
+
 
 /* SearchBooks CSS */
 .SearchBook-container {
