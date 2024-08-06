@@ -4,6 +4,11 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import '../cssfolder/AdminHome.css';
 
+// Import images
+import img1 from '../images/imgg1.jpeg';
+import img2 from '../images/imgg3.jpeg';
+import img3 from '../images/imgg4.jpeg';
+
 const AdminHomePage = () => {
   return (
     <div className="AdminHome-container">
@@ -18,7 +23,6 @@ const AdminHomePage = () => {
           autoplay={{ delay: 3000 }}
           className="AdminHome-swiper"
         >
-          {/* Slide 1 */}
           <SwiperSlide>
             <div className="AdminHome-slide">
               <div className="AdminHome-slideText">
@@ -27,7 +31,6 @@ const AdminHomePage = () => {
               </div>
             </div>
           </SwiperSlide>
-          {/* Slide 2 */}
           <SwiperSlide>
             <div className="AdminHome-slide">
               <div className="AdminHome-slideText">
@@ -36,7 +39,6 @@ const AdminHomePage = () => {
               </div>
             </div>
           </SwiperSlide>
-          {/* Slide 3 */}
           <SwiperSlide>
             <div className="AdminHome-slide">
               <div className="AdminHome-slideText">
@@ -45,9 +47,36 @@ const AdminHomePage = () => {
               </div>
             </div>
           </SwiperSlide>
-          {/* Add more slides as needed */}
         </Swiper>
       </div>
+      
+      <div className="AdminHome-history">
+        <h2 className="AdminHome-historyHeading">Library History</h2>
+        <div className="AdminHome-cards">
+          <div className="AdminHome-card">
+            <img src={img1} alt="Library Image 1" className="AdminHome-cardImage" />
+            <div className="AdminHome-cardContent">
+              <h3 className="AdminHome-cardTitle">Foundation</h3>
+              <p className="AdminHome-cardText">Our library was founded in 1920 with a collection of 1,000 books.</p>
+            </div>
+          </div>
+          <div className="AdminHome-card">
+            <img src={img2} alt="Library Image 2" className="AdminHome-cardImage" />
+            <div className="AdminHome-cardContent">
+              <h3 className="AdminHome-cardTitle">Expansion</h3>
+              <p className="AdminHome-cardText">In 1950, we expanded to include over 10,000 books and a new reading hall.</p>
+            </div>
+          </div>
+          <div className="AdminHome-card">
+            <img src={img3} alt="Library Image 3" className="AdminHome-cardImage" />
+            <div className="AdminHome-cardContent">
+              <h3 className="AdminHome-cardTitle">Modern Era</h3>
+              <p className="AdminHome-cardText">Today, we offer digital services and a collection of over 50,000 books.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <footer className="AdminHome-footer">
         &copy; {new Date().getFullYear()} Library Management System. All rights reserved.
       </footer>

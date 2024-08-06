@@ -12,7 +12,7 @@
 }
 
 .AdminHome-heading {
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: 20px;
 }
 
@@ -25,7 +25,7 @@
 
 .AdminHome-swiper {
   width: 90%;
-  height: 70%;
+  height: 60%; /* Increased the height */
   margin-top: 20px;
 }
 
@@ -46,12 +46,68 @@
 }
 
 .AdminHome-slideHeading {
-  font-size: 2em;
+  font-size: 2.2em;
   margin-bottom: 10px;
 }
 
 .AdminHome-slideDescription {
-  font-size: 1.2em;
+  font-size: 1.3em;
+}
+
+.AdminHome-history {
+  margin-top: 30px;
+  width: 90%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2); /* Changed to transparent background */
+  border-radius: 10px;
+  color: black;
+}
+
+.AdminHome-historyHeading {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.AdminHome-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.AdminHome-card {
+  background-color: white;
+  width: 30%;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.AdminHome-card:hover {
+  transform: translateY(-10px);
+}
+
+.AdminHome-cardImage {
+  width: 100%;
+  height: 200px; /* Increased the height */
+  object-fit: cover;
+}
+
+.AdminHome-cardContent {
+  padding: 15px;
+}
+
+.AdminHome-cardTitle {
+  font-size: 1.7em;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.AdminHome-cardText {
+  font-size: 1.1em;
+  color: #666;
 }
 
 .AdminHome-footer {
