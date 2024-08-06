@@ -145,3 +145,22 @@
     outline: none; /* Remove default focus outline */
     box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3); /* Red outline */
 }
+
+.alert-all-button {
+    background-color: #007bff; /* Blue background color */
+    color: white;              /* White text color */
+    border: none;              /* No border */
+    padding: 10px 20px;        /* Padding */
+    text-align: center;        /* Center text */
+    text-decoration: none;     /* No underline */
+    display: inline-block;     /* Inline-block display */
+    font-size: 16px;           /* Font size */
+    margin: 10px 0;            /* Margin */
+    cursor: pointer;           /* Pointer cursor on hover */
+    border-radius: 5px;        /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.alert-all-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
