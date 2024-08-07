@@ -1,14 +1,17 @@
-/* DelayedSubmissions.css */
-.main-delayed{
+.DelayedSubmission-main {
     width: 100%;
     min-height: 100vh;
     background-image: url("https://i.pinimg.com/originals/44/99/54/4499543a663da918ff3ef755d1b6339c.jpg");
     background-size: cover;
     overflow: hidden;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-.DelayedSubmissions-container {
+.DelayedSubmission-container {
     width: 80%;
     max-width: 1200px;
     margin: 20px auto;
@@ -17,23 +20,21 @@
     border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border for contrast */
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.7s ease-in-out;
+    animation: DelayedSubmission-fadeIn 0.7s ease-in-out;
 }
 
-
-
-.DelayedSubmissions-heading {
+.DelayedSubmission-heading {
     text-align: center;
     margin-bottom: 30px;
     font-size: 32px;
     font-weight: bold;
     border-bottom: 2px solid #007bff;
     padding-bottom: 10px;
-    animation: slideInFromTop 1s ease-in-out;
+    animation: DelayedSubmission-slideInFromTop 1s ease-in-out;
     position: relative;
 }
 
-.DelayedSubmissions-heading::after {
+.DelayedSubmission-heading::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -44,7 +45,7 @@
     transform: translateX(-50%);
 }
 
-.DelayedSubmissions-card {
+.DelayedSubmission-card {
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     border: 1px solid #ddd;
     border-radius: 12px;
@@ -55,12 +56,12 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
-    animation: fadeInUp 0.5s ease-in-out;
+    animation: DelayedSubmission-fadeInUp 0.5s ease-in-out;
     position: relative;
     overflow: hidden;
 }
 
-.DelayedSubmissions-card::before {
+.DelayedSubmission-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -71,96 +72,108 @@
     transition: all 0.5s;
 }
 
-.DelayedSubmissions-card:hover::before {
+.DelayedSubmission-card:hover::before {
     left: 100%;
 }
 
-.DelayedSubmissions-card:hover {
+.DelayedSubmission-card:hover {
     transform: scale(1.03);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.DelayedSubmissions-card div {
+.DelayedSubmission-card div {
     display: flex;
     flex-direction: column;
 }
 
-.DelayedSubmissions-card p {
+.DelayedSubmission-card p {
     margin: 5px 0;
     font-size: 18px;
     line-height: 1.5;
 }
 
-.DelayedSubmissions-card p strong {
-}
-
-.DelayedSubmissions-label {
+.DelayedSubmission-label {
     font-weight: bold;
     font-size: 18px;
 }
 
-.DelayedSubmissions-value {
+.DelayedSubmission-value {
     font-weight: normal;
     font-size: 18px;
 }
 
-.DelayedSubmissions-divider {
+.DelayedSubmission-divider {
     border-top: 1px solid #ddd;
     margin: 10px 0;
 }
 
-@keyframes fadeIn {
+@keyframes DelayedSubmission-fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-@keyframes slideInFromTop {
+@keyframes DelayedSubmission-slideInFromTop {
     from { transform: translateY(-20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes fadeInUp {
+@keyframes DelayedSubmission-fadeInUp {
     from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
 
 /* Button styling */
-.DelayedSubmissions-card button {
+.DelayedSubmission-card button {
     background-color: #e74c3c; /* Red color */
     color: white; /* Text color */
     border: none; /* Remove default border */
     border-radius: 8px; /* Rounded corners */
-    padding: 8px ; /* Smaller size */
-    font-size: 16px; /* Smaller font size */
+    padding: 8px 16px; /* Padding */
     cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    outline: none; /* Remove outline */
+    align-self: center; /* Center horizontally */
+    margin-top: 10px; /* Add margin to the top */
 }
 
-.DelayedSubmissions-card button:hover {
+.DelayedSubmission-card button:hover {
     background-color: #c0392b; /* Darker red on hover */
-    transform: scale(1.05); /* Slightly larger on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
 }
 
-.DelayedSubmissions-card button:focus {
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3); /* Red outline */
+.DelayedSubmission-card button:focus {
+    outline: none; /* Remove focus outline */
 }
 
-.alert-all-button {
-    background-color: #007bff; /* Blue background color */
-    color: white;              /* White text color */
-    border: none;              /* No border */
-    padding: 10px 20px;        /* Padding */
-    text-align: center;        /* Center text */
-    text-decoration: none;     /* No underline */
-    display: inline-block;     /* Inline-block display */
-    font-size: 16px;           /* Font size */
-    margin: 10px 0;            /* Margin */
-    cursor: pointer;           /* Pointer cursor on hover */
-    border-radius: 5px;        /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth transition */
+/* Centering the alert-all button and styling it */
+.DelayedSubmission-alert-all-button {
+    display: block;
+    margin: 0 auto 20px; /* Center horizontally and add bottom margin */
+    background-color: #e74c3c; /* Red color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 12px 24px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Font size */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    outline: none; /* Remove outline */
 }
 
-.alert-all-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+.DelayedSubmission-alert-all-button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.DelayedSubmission-alert-all-button:focus {
+    outline: none; /* Remove focus outline */
+}
+
+.DelayedSubmission-alert-message {
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 20px;
+    animation: DelayedSubmission-fadeIn 0.5s ease-in-out;
 }

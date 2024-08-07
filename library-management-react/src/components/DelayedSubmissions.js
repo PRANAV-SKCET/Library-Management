@@ -5,11 +5,13 @@ import emailjs from 'emailjs-com';
 
 export default function DelayedSubmissions() {
     const [CheckOutBooks, setCheckOutBooks] = useState([]);
+    const [alertMessage, setAlertMessage] = useState('');
 
     const fetchCheckOutBooks = async () => {
         const response = await axios.get('http://localhost:8080/getDelayedCheckOutBooks');
         setCheckOutBooks(response.data);
     };
+
     const calculateOverdueDays = (checkInDate) => {
         const currentDate = new Date();
         const checkIn = new Date(checkInDate);
@@ -18,10 +20,9 @@ export default function DelayedSubmissions() {
         return daysDiff > 0 ? daysDiff : 0;
     };
 
-
-    const sendEmail = async(memberName, bookTitle, checkInDate,memberId) => {
-        const response =  await axios.get(`http://localhost:8080/getMemberMail/${memberId}`);
-        const email=response.data;
+    const sendEmail = async (memberName, bookTitle, checkInDate, memberId) => {
+        const response = await axios.get(`http://localhost:8080/getMemberMail/${memberId}`);
+        const email = response.data;
         const templateParams = {
             to_email: email,
             memberName: memberName,
@@ -32,16 +33,19 @@ export default function DelayedSubmissions() {
         emailjs.send('service_i2dtwhz', 'template_b32l3me', templateParams, 'PCQ8Q6I17M3_kd2Ad')
             .then((response) => {
                 console.log('Email successfully sent!', response.status, response.text);
+                setAlertMessage(`Alert email sent to ${memberName} for the book "${bookTitle}"`);
+                setTimeout(() => setAlertMessage(''), 3000);
             }, (err) => {
                 console.error('Failed to send email:', err);
             });
     };
 
-
     const handleAlertAll = () => {
         CheckOutBooks.forEach((checkOut) => {
             sendEmail(checkOut.memberName, checkOut.bookName, checkOut.checkInDate, checkOut.memberId);
         });
+        setAlertMessage('Alert emails have been sent.');
+        setTimeout(() => setAlertMessage(''), 3000);
     };
 
     useEffect(() => {
@@ -49,21 +53,22 @@ export default function DelayedSubmissions() {
     }, []);
 
     return (
-        <div className="main-delayed">
-            <div className="DelayedSubmissions-container">
-                <h2 className="DelayedSubmissions-heading">Delayed Submissions</h2>
-                <button className="alert-all-button" onClick={handleAlertAll}>Alert All</button>
+        <div className="DelayedSubmission-main">
+            <div className="DelayedSubmission-container">
+                <h2 className="DelayedSubmission-heading">Delayed Submissions</h2>
+                <button className="DelayedSubmission-alert-all-button" onClick={handleAlertAll}>Alert All</button>
+                {alertMessage && <p className="DelayedSubmission-alert-message">{alertMessage}</p>}
                 {CheckOutBooks.map((checkOut, index) => (
-                    <div className="DelayedSubmissions-card" key={index}>
-                        <p><span className="DelayedSubmissions-label">Member Name:</span> <span className="DelayedSubmissions-value">{checkOut.memberName}</span></p>
-                        <p><span className="DelayedSubmissions-label">Member Id:</span> <span className="DelayedSubmissions-value">{checkOut.memberId}</span></p>
-                        <p><span className="DelayedSubmissions-label">Book Name:</span> <span className="DelayedSubmissions-value">{checkOut.bookName}</span></p>
-                        <p><span className="DelayedSubmissions-label">Book Id:</span> <span className="DelayedSubmissions-value">{checkOut.bookId}</span></p>
-                        <p><span className="DelayedSubmissions-label">Author:</span> <span className="DelayedSubmissions-value">{checkOut.bookAuthor}</span></p>
-                        <p><span className="DelayedSubmissions-label">Check-Out-Date:</span> <span className="DelayedSubmissions-value">{checkOut.checkOutDate}</span></p>
-                        <p><span className="DelayedSubmissions-label">Check-In-Date:</span> <span className="DelayedSubmissions-value">{checkOut.checkInDate}</span></p>
-                        <p><span className="DelayedSubmissions-label">Overdue Days:</span> <span className="DelayedSubmissions-value DelayedSubmissions-value-overdue">{calculateOverdueDays(checkOut.checkInDate)}</span></p>
-                        <button onClick={() => sendEmail(checkOut.memberName, checkOut.bookName, checkOut.checkInDate, checkOut.memberId)}>Alert</button>
+                    <div className="DelayedSubmission-card" key={index}>
+                        <p><span className="DelayedSubmission-label">Member Name:</span> <span className="DelayedSubmission-value">{checkOut.memberName}</span></p>
+                        <p><span className="DelayedSubmission-label">Member Id:</span> <span className="DelayedSubmission-value">{checkOut.memberId}</span></p>
+                        <p><span className="DelayedSubmission-label">Book Name:</span> <span className="DelayedSubmission-value">{checkOut.bookName}</span></p>
+                        <p><span className="DelayedSubmission-label">Book Id:</span> <span className="DelayedSubmission-value">{checkOut.bookId}</span></p>
+                        <p><span className="DelayedSubmission-label">Author:</span> <span className="DelayedSubmission-value">{checkOut.bookAuthor}</span></p>
+                        <p><span className="DelayedSubmission-label">Check-Out-Date:</span> <span className="DelayedSubmission-value">{checkOut.checkOutDate}</span></p>
+                        <p><span className="DelayedSubmission-label">Check-In-Date:</span> <span className="DelayedSubmission-value">{checkOut.checkInDate}</span></p>
+                        <p><span className="DelayedSubmission-label">Overdue Days:</span> <span className="DelayedSubmission-value DelayedSubmission-value-overdue">{calculateOverdueDays(checkOut.checkInDate)}</span></p>
+                        <button className="DelayedSubmission-alert-button" onClick={() => sendEmail(checkOut.memberName, checkOut.bookName, checkOut.checkInDate, checkOut.memberId)}>Alert</button>
                     </div>
                 ))}
             </div>
