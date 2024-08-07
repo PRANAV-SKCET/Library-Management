@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../cssfolder/ApplyMembership.css';
 import MemberNavbar from './MemberNavbar';
+import emailjs from 'emailjs-com';
 
 export default function ApplyMembership() {
     const [formData, setFormData] = useState({
@@ -14,6 +15,10 @@ export default function ApplyMembership() {
     });
 
     const [errorMessage, setErrorMessage] = useState('');
+    const [otpSent, setOtpSent] = useState(false);
+    const [otpVerified, setOtpVerified] = useState(false);
+    const [otpInput, setOtpInput] = useState('');
+    const [otp, setOtp] = useState('');
 
     const handleChange = (e) => {
         setFormData({
@@ -29,8 +34,50 @@ export default function ApplyMembership() {
         });
     };
 
+
+    const handleSendOtp = async () => {
+        // Generate OTP
+        const min = 111111;
+        const max = 999999;
+        const generatedOtp = Math.floor(Math.random() * (max - min + 1)) + min;
+    
+        setOtp(generatedOtp); // Set OTP to state
+    
+        // Prepare email parameters
+        const templateParams = {
+            otp: generatedOtp, // Use generated OTP here
+            to_name: formData.name,
+            to_email: formData.email,
+        };
+    
+        // Send OTP email
+        try {
+            await emailjs.send('service_w6d17pf', 'template_d1ohgvc', templateParams, 'cX_S7mrTgpbxY5_Db');
+            setOtpSent(true);
+            console.log('Email successfully sent!');
+        } catch (err) {
+            console.error('Failed to send email:', err);
+        }
+    };
+    
+
+    const handleVerifyOtp = () => {
+        if (otp == otpInput) {
+            setOtpVerified(true);
+            setErrorMessage('OTP verified successfully.');
+        } else {
+            setErrorMessage("OTP is invalid");
+        }
+    };
+    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!otpVerified) {
+            setErrorMessage('Please verify OTP before submitting.');
+            return;
+        }
+
         const currentDate = new Date().toISOString().split('T')[0];
         const dataToSend = {
             ...formData,
@@ -53,6 +100,8 @@ export default function ApplyMembership() {
                         gender: '',
                         email: ''
                     });
+                    setOtpSent(false);
+                    setOtpVerified(false);
                 }, 1000);
 
             } else {
@@ -150,8 +199,25 @@ export default function ApplyMembership() {
                                     required
                                 />
                             </div>
+                            <div className="ApplyMembership-form-group">
+                                <label>OTP</label>
+                                <input
+                                    type="text"
+                                    value={otpInput}
+                                    onChange={(e) => setOtpInput(e.target.value)}
+                                    placeholder="Enter OTP"
+                                    disabled={!otpSent}
+                                    required
+                                />
+                                <button type="button" onClick={handleSendOtp} disabled={otpSent}>
+                                    Send OTP
+                                </button>
+                                <button type="button" onClick={handleVerifyOtp} disabled={!otpSent}>
+                                    Verify OTP
+                                </button>
+                            </div>
                             <div className="ApplyMembership-submit-container">
-                                <button type="submit" className="ApplyMembership-submit-button">Submit</button>
+                                <button type="submit" className="ApplyMembership-submit-button" disabled={!otpVerified}>Submit</button>
                             </div>
                         </form>
                     </div>
